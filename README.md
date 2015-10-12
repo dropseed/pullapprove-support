@@ -1,3 +1,5 @@
+![PullApprove logo](https://pullapprove.com/static/img/logos/pull-approve-logo-gray-dk.png)
+---
 # PullApprove Support
 Public support / issue tracking for pullapprove.com
 
