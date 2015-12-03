@@ -1,0 +1,19 @@
+approve_by_comment: true
+reviewers:
+    -
+        name: admins
+        required: 2
+        members:
+            - a_user
+            - anotheruser
+    -
+        name: backend_devs
+        required: 1
+        members:
+            - backender_one
+    -
+        name: designers
+        required: 1
+        members:
+            - designerA
+            - designerB
