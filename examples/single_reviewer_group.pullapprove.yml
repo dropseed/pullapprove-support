@@ -1,0 +1,7 @@
+approve_by_comment: true
+reviewers:
+    name: default
+    required: 1
+    members:
+        - a_user
+        - anotheruser
