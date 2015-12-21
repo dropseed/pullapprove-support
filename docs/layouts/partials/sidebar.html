@@ -1,8 +1,17 @@
 <div class="docs-sidebar">
-    <h5>Docs</h5>
+    <h5 class="nav-heading">Docs</h5>
     <ul class="list-unstyled">
         {{ range .Site.Menus.sidebar }}
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
     </ul>
+
+    <div class="resources-nav">
+        <h5 class="nav-heading">Resources</h5>
+        <ul class="list-unstyled">
+            <li><a href="https://github.com/pullapprove/support/issues">GitHub Issues</a></li>
+            <li><a href="https://pullapprove.com/privacy/">Privacy Policy</a></li>
+            <li><a href="https://pullapprove.com/terms/">Terms of Use</a></li>
+        </ul>
+    </div>
 </div>

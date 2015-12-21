@@ -10,6 +10,19 @@
     padding: 30px;
     border-radius: 4px;
 }
+
 .docs-sidebar {
     text-align: right;
+    padding-right: 45px;
+}
+.docs-sidebar a {
+    display: inline-block;
+    color: #aaa;
+    margin-bottom: 2px;
+}
+.docs-sidebar .nav-heading {
+    margin-bottom: 10px;
+}
+.resources-nav {
+    margin-top: 45px;
 }
