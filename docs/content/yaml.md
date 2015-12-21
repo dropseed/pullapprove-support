@@ -1,3 +1,10 @@
+---
+date: "2015-12-11T23:39:09-06:00"
+title: "YAML configuration"
+menu: "sidebar"
+
+---
+
 ## YAML settings configuration
 To enable, simply place a `.pullapprove.yml` file in the root of your repo.
 

@@ -1,0 +1,4 @@
+baseurl: "https://docs.pullapprove.com/"
+languageCode: "en-us"
+title: "PullApprove Docs"
+canonifyurls: true

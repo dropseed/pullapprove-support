@@ -1,0 +1,8 @@
+<div class="docs-sidebar">
+    <h5>Docs</h5>
+    <ul class="list-unstyled">
+        {{ range .Site.Menus.sidebar }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+    </ul>
+</div>
