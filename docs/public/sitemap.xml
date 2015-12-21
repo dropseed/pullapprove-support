@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://docs.pullapprove.com/</loc>
     <lastmod>2015-12-11T23:39:09-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/yaml/</loc>
+    <loc>http://docs.pullapprove.com/yaml/</loc>
     <lastmod>2015-12-11T23:39:09-06:00</lastmod>
   </url>
   
