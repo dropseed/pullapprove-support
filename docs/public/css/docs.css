@@ -1,0 +1,15 @@
+.content-container {
+    background-color: #F9F9F9;
+    border-top: 1px solid #E0E0E0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.content {
+    background-color: white;
+    border: 1px solid #E0E0E0;
+    padding: 30px;
+    border-radius: 4px;
+}
+.docs-sidebar {
+    text-align: right;
+}

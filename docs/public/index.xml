@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PullApprove Docs</title>
+    <link>https://docs.pullapprove.com/</link>
+    <description>Recent content on PullApprove Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Dec 2015 23:39:09 -0600</lastBuildDate>
+    <atom:link href="https://docs.pullapprove.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>YAML configuration</title>
+      <link>https://docs.pullapprove.com/yaml/</link>
+      <pubDate>Fri, 11 Dec 2015 23:39:09 -0600</pubDate>
+      
+      <guid>https://docs.pullapprove.com/yaml/</guid>
+      <description>
+
+&lt;h2 id=&#34;yaml-settings-configuration:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;YAML settings configuration&lt;/h2&gt;
+
+&lt;p&gt;To enable, simply place a &lt;code&gt;.pullapprove.yml&lt;/code&gt; file in the root of your repo.&lt;/p&gt;
+
+&lt;h3 id=&#34;custom-reviewer-settings-and-groups:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;Custom reviewer settings and groups&lt;/h3&gt;
+
+&lt;p&gt;The biggest addition in this beta is the ability to define exactly who needs to review a PR.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;add as many &amp;ldquo;reviewer groups&amp;rdquo; as you like&lt;/li&gt;
+&lt;li&gt;for each group:
+
+&lt;ul&gt;
+&lt;li&gt;give it a name&lt;/li&gt;
+&lt;li&gt;decide how many approvals are required&lt;/li&gt;
+&lt;li&gt;choose the members&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;once approval has passed for all groups, the PR is approved&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The structure is simple, yet powerful. Best explained by examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;require approval from 1 frontend dev, 1 backend dev, 1 admin&lt;/li&gt;
+&lt;li&gt;require approval from 2 data scientists and 2 data engineers&lt;/li&gt;
+&lt;li&gt;require approval from 2 developers, 1 consultant, 2 account managers&lt;/li&gt;
+&lt;li&gt;require approval from&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;multiple-reviewer-groups-example:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;Multiple reviewer groups example&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: true
+reviewers:
+    -
+        name: admins
+        required: 2
+        members:
+            - a_user
+            - anotheruser
+    -
+        name: backend_devs
+        required: 1
+        members:
+            - backender_one
+    -
+        name: designers
+        required: 1
+        members:
+            - designerA
+            - designerB
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;single-reviewer-group-example:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;Single reviewer group example&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: false
+reviewers:
+    required: 1
+    members:
+        - a_user
+        - anotheruser
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
