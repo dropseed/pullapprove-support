@@ -21,7 +21,7 @@
 
 &lt;p&gt;To enable, simply place a &lt;code&gt;.pullapprove.yml&lt;/code&gt; file in the root of your repo.&lt;/p&gt;
 
-&lt;h3 id=&#34;custom-reviewer-settings-and-groups:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;Custom reviewer settings and groups&lt;/h3&gt;
+&lt;h4 id=&#34;custom-reviewer-settings-and-groups:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;Custom reviewer settings and groups&lt;/h4&gt;
 
 &lt;p&gt;The biggest addition in this beta is the ability to define exactly who needs to review a PR.&lt;/p&gt;
 
@@ -46,9 +46,58 @@
 &lt;li&gt;require approval from&amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;yaml-options:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;YAML Options&lt;/h2&gt;
+
+&lt;p&gt;Be sure to check the settings page of your repo in &lt;a href=&#34;https://pullapprove.com&#34;&gt;https://pullapprove.com&lt;/a&gt;, it will tell you if there is an error
+in your .pullapprove.yml file.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;approve-by-comment:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;&lt;strong&gt;approve_by_comment&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;p&gt;Enable parsing of pull request comments on github.com to trigger approval status.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Default&lt;/strong&gt;: &lt;code&gt;false&lt;/code&gt; &lt;strong&gt;Possible values&lt;/strong&gt;: &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;approve-regex:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;&lt;strong&gt;approve_regex&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;p&gt;Set a custom regular expression to use when parsing pull request comments for approval.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: &lt;code&gt;approve_by_comment&lt;/code&gt; must be enabled to use this.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Default&lt;/strong&gt;: &lt;code&gt;&#39;^Approved&#39;&lt;/code&gt; &lt;strong&gt;Possible values&lt;/strong&gt;: any valid regex, in a &lt;em&gt;single-quoted&lt;/em&gt; string&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;reject-regex:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;&lt;strong&gt;reject_regex&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;p&gt;Set a custom regular expression to use when parsing pull request comments for rejection.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: &lt;code&gt;approve_by_comment&lt;/code&gt; must be enabled to use this.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Default&lt;/strong&gt;: &lt;code&gt;&#39;^Rejected&#39;&lt;/code&gt; &lt;strong&gt;Possible values&lt;/strong&gt;: any valid regex, in a &lt;em&gt;single-quoted&lt;/em&gt; string&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;reviewers:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;&lt;strong&gt;reviewers&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;p&gt;This is a dynamic field for defining who reviewers are. See examples below for usage.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
 &lt;h4 id=&#34;multiple-reviewer-groups-example:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;Multiple reviewer groups example&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: true
+approve_regex: &#39;^:\+1:&#39;
+reject_regex: &#39;^No&#39;
 reviewers:
     -
         name: admins
@@ -73,6 +122,7 @@ reviewers:
 &lt;h4 id=&#34;single-reviewer-group-example:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;Single reviewer group example&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: false
+approve_regex: &#39;LGTM&#39;
 reviewers:
     required: 1
     members:
