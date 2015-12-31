@@ -69,9 +69,24 @@
     <h5 class="nav-heading">Docs</h5>
     <ul class="list-unstyled">
         
-        <li><a href="http://docs.pullapprove.com/yaml">YAML configuration</a></li>
+        <li><a href="http://docs.pullapprove.com/yaml">YAML overview</a></li>
         
     </ul>
+
+    <div class="yaml-nav">
+        <h5 class="nav-heading">YAML Settings</h5>
+        <ul class="list-unstyled">
+            
+            <li><a href="http://docs.pullapprove.com/yaml/approve_by_comment">approve_by_comment</a></li>
+            
+            <li><a href="http://docs.pullapprove.com/yaml/approve_regex">approve_regex</a></li>
+            
+            <li><a href="http://docs.pullapprove.com/yaml/reject_regex">reject_regex</a></li>
+            
+            <li><a href="http://docs.pullapprove.com/yaml/reviewers">reviewers</a></li>
+            
+        </ul>
+    </div>
 
     <div class="resources-nav">
         <h5 class="nav-heading">Resources</h5>
@@ -91,79 +106,11 @@
 
 <p>To enable, simply place a <code>.pullapprove.yml</code> file in the root of your repo.</p>
 
-<h4 id="custom-reviewer-settings-and-groups:26cdd1dbcdcbaf3edf773c725e4fa9fb">Custom reviewer settings and groups</h4>
+<p>Be sure to check the settings page of your repo in <a href="https://pullapprove.com">https://pullapprove.com</a>, it will tell you if there is an error in your .pullapprove.yml file.</p>
 
-<p>The biggest addition in this beta is the ability to define exactly who needs to review a PR.</p>
+<p>Read details about each YAML setting on their respective pages, available in the menu on the left side of the page.</p>
 
-<ul>
-<li>add as many &ldquo;reviewer groups&rdquo; as you like</li>
-<li>for each group:
-
-<ul>
-<li>give it a name</li>
-<li>decide how many approvals are required</li>
-<li>choose the members</li>
-</ul></li>
-<li>once approval has passed for all groups, the PR is approved</li>
-</ul>
-
-<p>The structure is simple, yet powerful. Best explained by examples:</p>
-
-<ul>
-<li>require approval from 1 frontend dev, 1 backend dev, 1 admin</li>
-<li>require approval from 2 data scientists and 2 data engineers</li>
-<li>require approval from 2 developers, 1 consultant, 2 account managers</li>
-<li>require approval from&hellip;</li>
-</ul>
-
-<p><br></p>
-
-<h2 id="yaml-options:26cdd1dbcdcbaf3edf773c725e4fa9fb">YAML Options</h2>
-
-<p>Be sure to check the settings page of your repo in <a href="https://pullapprove.com">https://pullapprove.com</a>, it will tell you if there is an error
-in your .pullapprove.yml file.</p>
-
-<p><br></p>
-
-<h5 id="approve-by-comment:26cdd1dbcdcbaf3edf773c725e4fa9fb"><strong>approve_by_comment</strong></h5>
-
-<p>Enable parsing of pull request comments on github.com to trigger approval status.</p>
-
-<p><strong>Default</strong>: <code>false</code> <strong>Possible values</strong>: <code>true</code>, <code>false</code></p>
-
-<hr />
-
-<h5 id="approve-regex:26cdd1dbcdcbaf3edf773c725e4fa9fb"><strong>approve_regex</strong></h5>
-
-<p>Set a custom regular expression to use when parsing pull request comments for approval.</p>
-
-<blockquote>
-<p>Note: <code>approve_by_comment</code> must be enabled to use this.</p>
-</blockquote>
-
-<p><strong>Default</strong>: <code>'^Approved'</code> <strong>Possible values</strong>: any valid regex, in a <em>single-quoted</em> string</p>
-
-<hr />
-
-<h5 id="reject-regex:26cdd1dbcdcbaf3edf773c725e4fa9fb"><strong>reject_regex</strong></h5>
-
-<p>Set a custom regular expression to use when parsing pull request comments for rejection.</p>
-
-<blockquote>
-<p>Note: <code>approve_by_comment</code> must be enabled to use this.</p>
-</blockquote>
-
-<p><strong>Default</strong>: <code>'^Rejected'</code> <strong>Possible values</strong>: any valid regex, in a <em>single-quoted</em> string</p>
-
-<hr />
-
-<h5 id="reviewers:26cdd1dbcdcbaf3edf773c725e4fa9fb"><strong>reviewers</strong></h5>
-
-<p>This is a dynamic field for defining who reviewers are. See examples below for usage.</p>
-
-<p><br></p>
-
-<h4 id="multiple-reviewer-groups-example:26cdd1dbcdcbaf3edf773c725e4fa9fb">Multiple reviewer groups example</h4>
+<h4 id="example-pullapprove-yml:26cdd1dbcdcbaf3edf773c725e4fa9fb">Example .pullapprove.yml</h4>
 
 <pre><code class="language-yaml">approve_by_comment: true
 approve_regex: '^:\+1:'
@@ -187,17 +134,6 @@ reviewers:
             - designerA
             - designerB
 
-</code></pre>
-
-<h4 id="single-reviewer-group-example:26cdd1dbcdcbaf3edf773c725e4fa9fb">Single reviewer group example</h4>
-
-<pre><code class="language-yaml">approve_by_comment: false
-approve_regex: 'LGTM'
-reviewers:
-    required: 1
-    members:
-        - a_user
-        - anotheruser
 </code></pre>
 
         </div>

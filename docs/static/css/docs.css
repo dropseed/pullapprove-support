@@ -26,3 +26,13 @@
 .resources-nav {
     margin-top: 45px;
 }
+
+.docs-yaml-values {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.docs-yaml-value {
+    font-weight: normal;
+    background-color: #efefef;
+    padding: 2px 4px;
+}

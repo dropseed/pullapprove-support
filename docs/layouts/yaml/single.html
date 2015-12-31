@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+
+<div class="row">
+    <div class="col-sm-3">{{ partial "sidebar.html" . }}</div>
+    <div class="col-sm-9">
+        <div class="docs-content docs-yaml-content">
+            <h1 class="docs-title">{{ .Title }}</h1>
+
+            {{ if .Params.default_value }}<div class="docs-yaml-values">Default: <span class="docs-yaml-value">{{ .Params.default_value }}</span></div>{{ end }}
+            {{ if .Params.possible_values }}<div class="docs-yaml-values">Possible values: {{ range .Params.possible_values }}<span class="docs-yaml-value">{{ . | markdownify }}</span> {{ end }}</div>{{ end }}
+            <hr>
+            {{ .Content }}
+        </div>
+    </div>
+</div>
+
+{{ partial "footer.html" . }}

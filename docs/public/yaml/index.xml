@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PullApprove Docs</title>
-    <link>http://docs.pullapprove.com/</link>
-    <description>Recent content on PullApprove Docs</description>
+    <title>Yamls on PullApprove Docs</title>
+    <link>http://docs.pullapprove.com/yaml/</link>
+    <description>Recent content in Yamls on PullApprove Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Dec 2015 20:19:51 -0600</lastBuildDate>
-    <atom:link href="http://docs.pullapprove.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://docs.pullapprove.com/yaml/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>reviewers</title>
@@ -116,50 +116,6 @@ reviewers:
       
       <guid>http://docs.pullapprove.com/yaml/approve_by_comment/</guid>
       <description>&lt;p&gt;Enable parsing of pull request comments on github.com to trigger approval status.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>YAML overview</title>
-      <link>http://docs.pullapprove.com/yaml/</link>
-      <pubDate>Fri, 11 Dec 2015 23:39:09 -0600</pubDate>
-      
-      <guid>http://docs.pullapprove.com/yaml/</guid>
-      <description>
-
-&lt;h2 id=&#34;yaml-settings-configuration:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;YAML settings configuration&lt;/h2&gt;
-
-&lt;p&gt;To enable, simply place a &lt;code&gt;.pullapprove.yml&lt;/code&gt; file in the root of your repo.&lt;/p&gt;
-
-&lt;p&gt;Be sure to check the settings page of your repo in &lt;a href=&#34;https://pullapprove.com&#34;&gt;https://pullapprove.com&lt;/a&gt;, it will tell you if there is an error in your .pullapprove.yml file.&lt;/p&gt;
-
-&lt;p&gt;Read details about each YAML setting on their respective pages, available in the menu on the left side of the page.&lt;/p&gt;
-
-&lt;h4 id=&#34;example-pullapprove-yml:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;Example .pullapprove.yml&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: true
-approve_regex: &#39;^:\+1:&#39;
-reject_regex: &#39;^No&#39;
-reviewers:
-    -
-        name: admins
-        required: 2
-        members:
-            - a_user
-            - anotheruser
-    -
-        name: backend_devs
-        required: 1
-        members:
-            - backender_one
-    -
-        name: designers
-        required: 1
-        members:
-            - designerA
-            - designerB
-
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

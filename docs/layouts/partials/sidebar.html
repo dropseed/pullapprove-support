@@ -6,6 +6,15 @@
         {{ end }}
     </ul>
 
+    <div class="yaml-nav">
+        <h5 class="nav-heading">YAML Settings</h5>
+        <ul class="list-unstyled">
+            {{ range .Site.Menus.yaml_settings }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+
     <div class="resources-nav">
         <h5 class="nav-heading">Resources</h5>
         <ul class="list-unstyled">

@@ -99,11 +99,18 @@
 </div>
 </div>
     <div class="col-sm-9">
-        <div class="docs-content">
-            <h2>Welcome to the PullApprove docs!</h2>
-            <p class="lead">Frankly, we're proud of the fact that there isn't much documentation required to use
-            PullApprove. But there are somethings, and more on the way, that will need a small amount of documentation.</p>
-            <p class="lead">If you have any questions, comments, or ideas for PullApprove or these docs check out our <a href="https://github.com/pullapprove/support">public issues repo on GitHub!</a></p>
+        <div class="docs-content docs-yaml-content">
+            <h1 class="docs-title">approve_regex</h1>
+
+            <div class="docs-yaml-values">Default: <span class="docs-yaml-value">&#39;^Approved&#39;</span></div>
+            <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any valid regex, in a <em>single-quoted</em> string</span> </div>
+            <hr>
+            <p>Set a custom regular expression to use when parsing pull request comments for approval.</p>
+
+<blockquote>
+<p>Note: <code>approve_by_comment</code> must be enabled to use this.</p>
+</blockquote>
+
         </div>
     </div>
 </div>

@@ -99,11 +99,76 @@
 </div>
 </div>
     <div class="col-sm-9">
-        <div class="docs-content">
-            <h2>Welcome to the PullApprove docs!</h2>
-            <p class="lead">Frankly, we're proud of the fact that there isn't much documentation required to use
-            PullApprove. But there are somethings, and more on the way, that will need a small amount of documentation.</p>
-            <p class="lead">If you have any questions, comments, or ideas for PullApprove or these docs check out our <a href="https://github.com/pullapprove/support">public issues repo on GitHub!</a></p>
+        <div class="docs-content docs-yaml-content">
+            <h1 class="docs-title">reviewers</h1>
+
+            
+            
+            <hr>
+            
+
+<p>This is a dynamic field for defining who reviewers are. See examples below for usage.</p>
+
+<p>Overview:</p>
+
+<ul>
+<li>add as many &ldquo;reviewer groups&rdquo; as you like</li>
+<li>for each group:
+
+<ul>
+<li>give it a name</li>
+<li>decide how many approvals are required</li>
+<li>choose the members</li>
+</ul></li>
+<li>once approval has passed for all groups, the PR is approved</li>
+</ul>
+
+<p>The structure is simple, yet powerful. Best explained by examples:</p>
+
+<ul>
+<li>require approval from 1 frontend dev, 1 backend dev, 1 admin</li>
+<li>require approval from 2 data scientists and 2 data engineers</li>
+<li>require approval from 2 developers, 1 consultant, 2 account managers</li>
+<li>require approval from&hellip;</li>
+</ul>
+
+<h4 id="multiple-reviewer-groups-example:0f435dbce8eb2542a19d6d5ea7ebce44">Multiple reviewer groups example</h4>
+
+<pre><code class="language-yaml">approve_by_comment: true
+approve_regex: '^:\+1:'
+reject_regex: '^No'
+reviewers:
+    -
+        name: admins
+        required: 2
+        members:
+            - a_user
+            - anotheruser
+    -
+        name: backend_devs
+        required: 1
+        members:
+            - backender_one
+    -
+        name: designers
+        required: 1
+        members:
+            - designerA
+            - designerB
+
+</code></pre>
+
+<h4 id="single-reviewer-group-example:0f435dbce8eb2542a19d6d5ea7ebce44">Single reviewer group example</h4>
+
+<pre><code class="language-yaml">approve_by_comment: false
+approve_regex: 'LGTM'
+reviewers:
+    required: 1
+    members:
+        - a_user
+        - anotheruser
+</code></pre>
+
         </div>
     </div>
 </div>
