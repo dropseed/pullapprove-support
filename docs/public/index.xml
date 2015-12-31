@@ -176,6 +176,8 @@ reviewers:
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: true
 approve_regex: &#39;^:\+1:&#39;
 reject_regex: &#39;^No&#39;
+reset_on_push: true
+author_approval: ignored
 reviewers:
     -
         name: admins

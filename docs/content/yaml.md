@@ -17,6 +17,8 @@ Read details about each YAML setting on their respective pages, available in the
 approve_by_comment: true
 approve_regex: '^:\+1:'
 reject_regex: '^No'
+reset_on_push: true
+author_approval: ignored
 reviewers:
     -
         name: admins
