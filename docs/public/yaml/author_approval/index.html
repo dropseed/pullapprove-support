@@ -103,42 +103,29 @@
 </div>
 </div>
     <div class="col-sm-9">
-        <div class="docs-content">
+        <div class="docs-content docs-yaml-content">
+            <h1 class="docs-title">author_approval</h1>
+
+            <div class="docs-yaml-values">Default: <span class="docs-yaml-value">default</span></div>
+            <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">ignored</span> <span class="docs-yaml-value">required</span> </div>
+            <hr>
             
 
-<h2 id="yaml-settings-configuration:26cdd1dbcdcbaf3edf773c725e4fa9fb">YAML settings configuration</h2>
+<p>Whether or not approval is required by the author of the pull request.</p>
 
-<p>To enable, simply place a <code>.pullapprove.yml</code> file in the root of your repo.</p>
+<h3 id="usage:4a46aa2c52d8e7587dcfceb1eb279cd3">Usage</h3>
 
-<p>Be sure to check the settings page of your repo in <a href="https://pullapprove.com">https://pullapprove.com</a>, it will tell you if there is an error in your .pullapprove.yml file.</p>
+<h5 id="default:4a46aa2c52d8e7587dcfceb1eb279cd3">default</h5>
 
-<p>Read details about each YAML setting on their respective pages, available in the menu on the left side of the page.</p>
+<p>The author can approve their own pull requests. Their approval counts towards the <code>required</code> number.</p>
 
-<h4 id="example-pullapprove-yml:26cdd1dbcdcbaf3edf773c725e4fa9fb">Example .pullapprove.yml</h4>
+<h5 id="ignored:4a46aa2c52d8e7587dcfceb1eb279cd3">ignored</h5>
 
-<pre><code class="language-yaml">approve_by_comment: true
-approve_regex: '^:\+1:'
-reject_regex: '^No'
-reviewers:
-    -
-        name: admins
-        required: 2
-        members:
-            - a_user
-            - anotheruser
-    -
-        name: backend_devs
-        required: 1
-        members:
-            - backender_one
-    -
-        name: designers
-        required: 1
-        members:
-            - designerA
-            - designerB
+<p>The author can approve their own pull requests, but it does not count towards the number of approvals <code>required</code>. For example, if 3 reviewers must approve a PR then that means 3 reviewers <em>excluding the author</em>.</p>
 
-</code></pre>
+<h5 id="required:4a46aa2c52d8e7587dcfceb1eb279cd3">required</h5>
+
+<p>The author <strong>must</strong> approve the pull request. Useful if PRs are opened &ldquo;early and often&rdquo; to facilitate discussion, despite the work being finished.</p>
 
         </div>
     </div>

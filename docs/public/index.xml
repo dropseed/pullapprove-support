@@ -6,8 +6,44 @@
     <description>Recent content on PullApprove Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Dec 2015 20:19:51 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 30 Dec 2015 20:55:54 -0600</lastBuildDate>
     <atom:link href="http://docs.pullapprove.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>reset_on_push</title>
+      <link>http://docs.pullapprove.com/yaml/reset_on_push/</link>
+      <pubDate>Wed, 30 Dec 2015 20:55:54 -0600</pubDate>
+      
+      <guid>http://docs.pullapprove.com/yaml/reset_on_push/</guid>
+      <description>&lt;p&gt;Whether or not approval statuses get reset to &amp;ldquo;pending&amp;rdquo; when new commits are pushed to a PR. If &lt;code&gt;false&lt;/code&gt;, the PR effectively gets approved once. If &lt;code&gt;true&lt;/code&gt;, any time new commits are pushed, those changes will need to be approved.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>author_approval</title>
+      <link>http://docs.pullapprove.com/yaml/author_approval/</link>
+      <pubDate>Wed, 30 Dec 2015 20:55:15 -0600</pubDate>
+      
+      <guid>http://docs.pullapprove.com/yaml/author_approval/</guid>
+      <description>
+
+&lt;p&gt;Whether or not approval is required by the author of the pull request.&lt;/p&gt;
+
+&lt;h3 id=&#34;usage:4a46aa2c52d8e7587dcfceb1eb279cd3&#34;&gt;Usage&lt;/h3&gt;
+
+&lt;h5 id=&#34;default:4a46aa2c52d8e7587dcfceb1eb279cd3&#34;&gt;default&lt;/h5&gt;
+
+&lt;p&gt;The author can approve their own pull requests. Their approval counts towards the &lt;code&gt;required&lt;/code&gt; number.&lt;/p&gt;
+
+&lt;h5 id=&#34;ignored:4a46aa2c52d8e7587dcfceb1eb279cd3&#34;&gt;ignored&lt;/h5&gt;
+
+&lt;p&gt;The author can approve their own pull requests, but it does not count towards the number of approvals &lt;code&gt;required&lt;/code&gt;. For example, if 3 reviewers must approve a PR then that means 3 reviewers &lt;em&gt;excluding the author&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h5 id=&#34;required:4a46aa2c52d8e7587dcfceb1eb279cd3&#34;&gt;required&lt;/h5&gt;
+
+&lt;p&gt;The author &lt;strong&gt;must&lt;/strong&gt; approve the pull request. Useful if PRs are opened &amp;ldquo;early and often&amp;rdquo; to facilitate discussion, despite the work being finished.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>reviewers</title>

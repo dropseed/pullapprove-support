@@ -3,8 +3,18 @@
   
   <url>
     <loc>http://docs.pullapprove.com/</loc>
-    <lastmod>2015-12-30T20:19:51-06:00</lastmod>
+    <lastmod>2015-12-30T20:55:54-06:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://docs.pullapprove.com/yaml/reset_on_push/</loc>
+    <lastmod>2015-12-30T20:55:54-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.pullapprove.com/yaml/author_approval/</loc>
+    <lastmod>2015-12-30T20:55:15-06:00</lastmod>
   </url>
   
   <url>

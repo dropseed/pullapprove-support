@@ -103,42 +103,13 @@
 </div>
 </div>
     <div class="col-sm-9">
-        <div class="docs-content">
-            
+        <div class="docs-content docs-yaml-content">
+            <h1 class="docs-title">reset_on_push</h1>
 
-<h2 id="yaml-settings-configuration:26cdd1dbcdcbaf3edf773c725e4fa9fb">YAML settings configuration</h2>
-
-<p>To enable, simply place a <code>.pullapprove.yml</code> file in the root of your repo.</p>
-
-<p>Be sure to check the settings page of your repo in <a href="https://pullapprove.com">https://pullapprove.com</a>, it will tell you if there is an error in your .pullapprove.yml file.</p>
-
-<p>Read details about each YAML setting on their respective pages, available in the menu on the left side of the page.</p>
-
-<h4 id="example-pullapprove-yml:26cdd1dbcdcbaf3edf773c725e4fa9fb">Example .pullapprove.yml</h4>
-
-<pre><code class="language-yaml">approve_by_comment: true
-approve_regex: '^:\+1:'
-reject_regex: '^No'
-reviewers:
-    -
-        name: admins
-        required: 2
-        members:
-            - a_user
-            - anotheruser
-    -
-        name: backend_devs
-        required: 1
-        members:
-            - backender_one
-    -
-        name: designers
-        required: 1
-        members:
-            - designerA
-            - designerB
-
-</code></pre>
+            <div class="docs-yaml-values">Default: <span class="docs-yaml-value">false</span></div>
+            <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">true</span> <span class="docs-yaml-value">false</span> </div>
+            <hr>
+            <p>Whether or not approval statuses get reset to &ldquo;pending&rdquo; when new commits are pushed to a PR. If <code>false</code>, the PR effectively gets approved once. If <code>true</code>, any time new commits are pushed, those changes will need to be approved.</p>
 
         </div>
     </div>
