@@ -109,11 +109,25 @@
             <div class="docs-yaml-values">Default: <span class="docs-yaml-value">&#39;^Rejected&#39;</span></div>
             <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any valid regex, in a <em>single-quoted</em> string</span> </div>
             <hr>
-            <p>Set a custom regular expression to use when parsing pull request comments for rejection.</p>
+            
+
+<p>Set a custom regular expression to use when parsing pull request comments for rejection.</p>
 
 <blockquote>
-<p>Note: <code>approve_by_comment</code> must be enabled to use this.</p>
+<p>Notes:</p>
+
+<ul>
+<li><code>approve_by_comment</code> must be enabled to use this.</li>
+<li>We recommend starting with <code>^</code>, to only match strings at the beginning of a line. In our experience this makes approval more intentional, and also avoids issues with comments via email where previous content may be embedded in a blockquote (<code>&gt;</code>) that could otherwise trigger mistaken approval.</li>
+</ul>
 </blockquote>
+
+<h4 id="examples:9572bb22eda4a1bea1e12f87c38cebcd">Examples</h4>
+
+<p>Multiple triggers</p>
+
+<pre><code class="language-yaml">reject_regex: '^(Rejected|:-1:)'
+</code></pre>
 
         </div>
     </div>
@@ -124,7 +138,7 @@
 
 <div class="copyright-footer">
     <div class="container clearfix">
-        <p class="text-center"><small>&copy; 2015 Dropseed, LLC. All rights reserved.</small></p>
+        <p class="text-center"><small>&copy; 2016 Dropseed, LLC. All rights reserved.</small></p>
     </div>
 </div>
 

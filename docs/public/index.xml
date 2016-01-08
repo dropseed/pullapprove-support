@@ -123,11 +123,25 @@ reviewers:
       <pubDate>Wed, 30 Dec 2015 20:19:46 -0600</pubDate>
       
       <guid>http://docs.pullapprove.com/yaml/reject_regex/</guid>
-      <description>&lt;p&gt;Set a custom regular expression to use when parsing pull request comments for rejection.&lt;/p&gt;
+      <description>
+
+&lt;p&gt;Set a custom regular expression to use when parsing pull request comments for rejection.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Note: &lt;code&gt;approve_by_comment&lt;/code&gt; must be enabled to use this.&lt;/p&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;approve_by_comment&lt;/code&gt; must be enabled to use this.&lt;/li&gt;
+&lt;li&gt;We recommend starting with &lt;code&gt;^&lt;/code&gt;, to only match strings at the beginning of a line. In our experience this makes approval more intentional, and also avoids issues with comments via email where previous content may be embedded in a blockquote (&lt;code&gt;&amp;gt;&lt;/code&gt;) that could otherwise trigger mistaken approval.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
+
+&lt;h4 id=&#34;examples:9572bb22eda4a1bea1e12f87c38cebcd&#34;&gt;Examples&lt;/h4&gt;
+
+&lt;p&gt;Multiple triggers&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;reject_regex: &#39;^(Rejected|:-1:)&#39;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -137,11 +151,25 @@ reviewers:
       <pubDate>Wed, 30 Dec 2015 20:19:42 -0600</pubDate>
       
       <guid>http://docs.pullapprove.com/yaml/approve_regex/</guid>
-      <description>&lt;p&gt;Set a custom regular expression to use when parsing pull request comments for approval.&lt;/p&gt;
+      <description>
+
+&lt;p&gt;Set a custom regular expression to use when parsing pull request comments for approval.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Note: &lt;code&gt;approve_by_comment&lt;/code&gt; must be enabled to use this.&lt;/p&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;approve_by_comment&lt;/code&gt; must be enabled to use this.&lt;/li&gt;
+&lt;li&gt;We recommend starting with &lt;code&gt;^&lt;/code&gt;, to only match strings at the beginning of a line. In our experience this makes approval more intentional, and also avoids issues with comments via email where previous content may be embedded in a blockquote (&lt;code&gt;&amp;gt;&lt;/code&gt;) that could otherwise trigger mistaken approval.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
+
+&lt;h4 id=&#34;examples:08effbece3877590069102b65bc50180&#34;&gt;Examples&lt;/h4&gt;
+
+&lt;p&gt;Multiple triggers&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_regex: &#39;^(Approved|:shipit:)&#39;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
