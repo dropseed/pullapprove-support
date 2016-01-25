@@ -78,6 +78,36 @@
 &lt;li&gt;require approval from&amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&#34;reviewer-group-settings:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;Reviewer group settings&lt;/h3&gt;
+
+&lt;h5 id=&#34;name:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;name&lt;/h5&gt;
+
+&lt;div class=&#34;docs-yaml-values&#34;&gt;Possible values: &lt;span class=&#34;docs-yaml-value&#34;&gt;any string&lt;/span&gt;&lt;/div&gt;
+
+&lt;p&gt;A name to refer to this group of reviewers. Used in status messages. Optional if there is only one reviewer group.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;required:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;required&lt;/h5&gt;
+
+&lt;div class=&#34;docs-yaml-values&#34;&gt;Possible values: &lt;span class=&#34;docs-yaml-value&#34;&gt;any integer &gt; -1&lt;/span&gt;&lt;/div&gt;
+
+&lt;p&gt;The number of approvals required out of this group.&lt;/p&gt;
+
+&lt;p&gt;A value of &lt;code&gt;-1&lt;/code&gt; means that approval is required from all members.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;members:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;members&lt;/h5&gt;
+
+&lt;div class=&#34;docs-yaml-values&#34;&gt;Possible values: &lt;span class=&#34;docs-yaml-value&#34;&gt;array of username strings&lt;/span&gt; &lt;span class=&#34;docs-yaml-value&#34;&gt;&#34;all&#34;&lt;/span&gt;&lt;/div&gt;
+
+&lt;p&gt;The members of this reviewer group, by GitHub username.&lt;/p&gt;
+
+&lt;p&gt;A value of &lt;code&gt;all&lt;/code&gt; means that all repo collaborators are reviewers in this group.&lt;/p&gt;
+
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;multiple-reviewer-groups-example:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;Multiple reviewer groups example&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: true

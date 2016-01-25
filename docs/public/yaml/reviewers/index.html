@@ -138,6 +138,36 @@
 <li>require approval from&hellip;</li>
 </ul>
 
+<h3 id="reviewer-group-settings:0f435dbce8eb2542a19d6d5ea7ebce44">Reviewer group settings</h3>
+
+<h5 id="name:0f435dbce8eb2542a19d6d5ea7ebce44">name</h5>
+
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any string</span></div>
+
+<p>A name to refer to this group of reviewers. Used in status messages. Optional if there is only one reviewer group.</p>
+
+<hr />
+
+<h5 id="required:0f435dbce8eb2542a19d6d5ea7ebce44">required</h5>
+
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any integer > -1</span></div>
+
+<p>The number of approvals required out of this group.</p>
+
+<p>A value of <code>-1</code> means that approval is required from all members.</p>
+
+<hr />
+
+<h5 id="members:0f435dbce8eb2542a19d6d5ea7ebce44">members</h5>
+
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of username strings</span> <span class="docs-yaml-value">"all"</span></div>
+
+<p>The members of this reviewer group, by GitHub username.</p>
+
+<p>A value of <code>all</code> means that all repo collaborators are reviewers in this group.</p>
+
+<hr />
+
 <h4 id="multiple-reviewer-groups-example:0f435dbce8eb2542a19d6d5ea7ebce44">Multiple reviewer groups example</h4>
 
 <pre><code class="language-yaml">approve_by_comment: true

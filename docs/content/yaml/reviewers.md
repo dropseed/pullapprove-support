@@ -24,6 +24,33 @@ The structure is simple, yet powerful. Best explained by examples:
 - require approval from 2 developers, 1 consultant, 2 account managers
 - require approval from...
 
+### Reviewer group settings
+
+##### name
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any string</span></div>
+
+A name to refer to this group of reviewers. Used in status messages. Optional if there is only one reviewer group.
+
+---
+
+##### required
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any integer > -1</span></div>
+
+The number of approvals required out of this group.
+
+A value of `-1` means that approval is required from all members.
+
+---
+
+##### members
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of username strings</span> <span class="docs-yaml-value">"all"</span></div>
+
+The members of this reviewer group, by GitHub username.
+
+A value of `all` means that all repo collaborators are reviewers in this group.
+
+---
+
 #### Multiple reviewer groups example
 ```yaml
 approve_by_comment: true
