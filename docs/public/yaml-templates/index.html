@@ -112,40 +112,32 @@
         <div class="docs-content">
             
 
-<h2 id="yaml-settings-configuration:26cdd1dbcdcbaf3edf773c725e4fa9fb">YAML settings configuration</h2>
+<h2 id="yaml-templates:251301b78c9668a7f5580165a95069ff">YAML templates</h2>
 
-<p>To enable, simply place a <code>.pullapprove.yml</code> file in the root of your repo.</p>
+<p>Templates are a great way to keep the key preferences for your organization in one location, and easily extend them on a per-repo basis.</p>
 
-<p>Be sure to check the settings page of your repo in <a href="https://pullapprove.com">https://pullapprove.com</a>, it will tell you if there is an error in your .pullapprove.yml file.</p>
+<p>Templates are created and managed on pullapprove.com. <strong>You can find edit templates at pullapprove.com/YOUR_ORG</strong> or by clicking your organization name when browsing repos on pullapprove.com.</p>
 
-<p>Read details about each YAML setting on their respective pages, available in the menu on the left side of the page.</p>
+<p>An example template to contain some general rules for your organization.</p>
 
-<h4 id="example-pullapprove-yml:26cdd1dbcdcbaf3edf773c725e4fa9fb">Example .pullapprove.yml</h4>
+<h4 id="yaml-template-named-client-projects:251301b78c9668a7f5580165a95069ff">YAML template named &ldquo;client-projects&rdquo;</h4>
 
 <pre><code class="language-yaml">approve_by_comment: true
-approve_regex: '^:\+1:'
-reject_regex: '^No'
+approve_regex: '^(Approved|:\+1:)'
 reset_on_push: true
-author_approval: ignored
 reviewers:
-    -
-        name: admins
-        required: 2
-        members:
-            - a_user
-            - anotheruser
-    -
-        name: backend_devs
-        required: 1
-        members:
-            - backender_one
-    -
-        name: designers
-        required: 1
-        members:
-            - designerA
-            - designerB
+    required: 1
+    members:
+        - davegaeddert
+        - joelgaeddert
+</code></pre>
 
+<p>Then for each repo, you simply create a .pullapprove.yml which <code>extends</code> one of your templates. Any settings in this file will then override the defaults provided by the template.</p>
+
+<h4 id="repo-pullapprove-yml:251301b78c9668a7f5580165a95069ff">Repo .pullapprove.yml</h4>
+
+<pre><code class="language-yaml">extends: client-projects
+reset_on_push: false  # on this repo, we don't want to reset approvals on push
 </code></pre>
 
         </div>

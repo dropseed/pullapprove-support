@@ -3,8 +3,18 @@
   
   <url>
     <loc>http://docs.pullapprove.com/</loc>
-    <lastmod>2015-12-30T20:55:54-06:00</lastmod>
+    <lastmod>2016-02-04T20:19:35-06:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://docs.pullapprove.com/yaml/extends/</loc>
+    <lastmod>2016-02-04T20:19:35-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://docs.pullapprove.com/yaml-templates/</loc>
+    <lastmod>2016-02-04T19:59:38-06:00</lastmod>
   </url>
   
   <url>

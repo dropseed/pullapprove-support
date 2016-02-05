@@ -6,8 +6,40 @@
     <description>Recent content in Yamls on PullApprove Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Dec 2015 20:55:54 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 04 Feb 2016 20:19:35 -0600</lastBuildDate>
     <atom:link href="http://docs.pullapprove.com/yaml/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>extends</title>
+      <link>http://docs.pullapprove.com/yaml/extends/</link>
+      <pubDate>Thu, 04 Feb 2016 20:19:35 -0600</pubDate>
+      
+      <guid>http://docs.pullapprove.com/yaml/extends/</guid>
+      <description>
+
+&lt;p&gt;Extend a &lt;a href=&#34;http://docs.pullapprove.com/yaml-templates&#34;&gt;YAML template&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Any settings including in the same .pullapprove.yml will override the settings in the template (if they exist).&lt;/p&gt;
+
+&lt;h4 id=&#34;repo-pullapprove-yml:ddee0e7713ac40e6dbb8ff5d03dd1b30&#34;&gt;Repo .pullapprove.yml&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;extends: client-projects
+reset_on_push: false  # on this repo, we don&#39;t want to reset approvals on push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;yaml-template-named-client-projects:ddee0e7713ac40e6dbb8ff5d03dd1b30&#34;&gt;YAML template named &amp;ldquo;client-projects&amp;rdquo;&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: true
+approve_regex: &#39;^(Approved|:\+1:)&#39;
+reset_on_push: true
+reviewers:
+    required: 1
+    members:
+        - davegaeddert
+        - joelgaeddert
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>reset_on_push</title>

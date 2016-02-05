@@ -109,43 +109,34 @@
 </div>
 </div>
     <div class="col-sm-9">
-        <div class="docs-content">
+        <div class="docs-content docs-yaml-content">
+            <h1 class="docs-title">extends</h1>
+
+            
+            <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any string matching a template name</span> </div>
+            <hr>
             
 
-<h2 id="yaml-settings-configuration:26cdd1dbcdcbaf3edf773c725e4fa9fb">YAML settings configuration</h2>
+<p>Extend a <a href="http://docs.pullapprove.com/yaml-templates">YAML template</a>.</p>
 
-<p>To enable, simply place a <code>.pullapprove.yml</code> file in the root of your repo.</p>
+<p>Any settings including in the same .pullapprove.yml will override the settings in the template (if they exist).</p>
 
-<p>Be sure to check the settings page of your repo in <a href="https://pullapprove.com">https://pullapprove.com</a>, it will tell you if there is an error in your .pullapprove.yml file.</p>
+<h4 id="repo-pullapprove-yml:ddee0e7713ac40e6dbb8ff5d03dd1b30">Repo .pullapprove.yml</h4>
 
-<p>Read details about each YAML setting on their respective pages, available in the menu on the left side of the page.</p>
+<pre><code class="language-yaml">extends: client-projects
+reset_on_push: false  # on this repo, we don't want to reset approvals on push
+</code></pre>
 
-<h4 id="example-pullapprove-yml:26cdd1dbcdcbaf3edf773c725e4fa9fb">Example .pullapprove.yml</h4>
+<h4 id="yaml-template-named-client-projects:ddee0e7713ac40e6dbb8ff5d03dd1b30">YAML template named &ldquo;client-projects&rdquo;</h4>
 
 <pre><code class="language-yaml">approve_by_comment: true
-approve_regex: '^:\+1:'
-reject_regex: '^No'
+approve_regex: '^(Approved|:\+1:)'
 reset_on_push: true
-author_approval: ignored
 reviewers:
-    -
-        name: admins
-        required: 2
-        members:
-            - a_user
-            - anotheruser
-    -
-        name: backend_devs
-        required: 1
-        members:
-            - backender_one
-    -
-        name: designers
-        required: 1
-        members:
-            - designerA
-            - designerB
-
+    required: 1
+    members:
+        - davegaeddert
+        - joelgaeddert
 </code></pre>
 
         </div>
