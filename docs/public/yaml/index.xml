@@ -110,6 +110,56 @@ reviewers:
 &lt;li&gt;require approval from&amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;multiple-reviewer-groups-example:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;Multiple reviewer groups example&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: true
+approve_regex: &#39;^:\+1:&#39;
+reject_regex: &#39;^No&#39;
+reviewers:
+    -
+        name: admins
+        required: 2
+        members:
+            - a_user
+            - anotheruser
+    -
+        name: backend_devs
+        required: 1
+        members:
+            - backender_one
+        conditions:
+            labels:
+                - backend-review
+            branches:
+                - staging
+    -
+        name: designers
+        required: 1
+        members:
+            - designerA
+            - designerB
+        conditions:
+            files:
+                - &amp;quot;*.png&amp;quot;
+                - &amp;quot;*.jpg&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;single-reviewer-group-example:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;Single reviewer group example&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: false
+approve_regex: &#39;LGTM&#39;
+reviewers:
+    required: 1
+    members:
+        - a_user
+        - anotheruser
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
 &lt;h3 id=&#34;reviewer-group-settings:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;Reviewer group settings&lt;/h3&gt;
 
 &lt;h5 id=&#34;name:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;name&lt;/h5&gt;
@@ -200,54 +250,6 @@ If PR is merging into one of these branches, this group must review the PR.&lt;/
                 - deploy  # review if merging to deploy
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;multiple-reviewer-groups-example:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;Multiple reviewer groups example&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: true
-approve_regex: &#39;^:\+1:&#39;
-reject_regex: &#39;^No&#39;
-reviewers:
-    -
-        name: admins
-        required: 2
-        members:
-            - a_user
-            - anotheruser
-    -
-        name: backend_devs
-        required: 1
-        members:
-            - backender_one
-        conditions:
-            labels:
-                - backend-review
-            branches:
-                - staging
-    -
-        name: designers
-        required: 1
-        members:
-            - designerA
-            - designerB
-        conditions:
-            files:
-                - &amp;quot;*.png&amp;quot;
-                - &amp;quot;*.jpg&amp;quot;
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;single-reviewer-group-example:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;Single reviewer group example&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: false
-approve_regex: &#39;LGTM&#39;
-reviewers:
-    required: 1
-    members:
-        - a_user
-        - anotheruser
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

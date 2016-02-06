@@ -24,6 +24,56 @@ The structure is simple, yet powerful. Best explained by examples:
 - require approval from 2 developers, 1 consultant, 2 account managers
 - require approval from...
 
+---
+
+#### Multiple reviewer groups example
+```yaml
+approve_by_comment: true
+approve_regex: '^:\+1:'
+reject_regex: '^No'
+reviewers:
+    -
+        name: admins
+        required: 2
+        members:
+            - a_user
+            - anotheruser
+    -
+        name: backend_devs
+        required: 1
+        members:
+            - backender_one
+        conditions:
+            labels:
+                - backend-review
+            branches:
+                - staging
+    -
+        name: designers
+        required: 1
+        members:
+            - designerA
+            - designerB
+        conditions:
+            files:
+                - "*.png"
+                - "*.jpg"
+
+```
+
+#### Single reviewer group example
+```yaml
+approve_by_comment: false
+approve_regex: 'LGTM'
+reviewers:
+    required: 1
+    members:
+        - a_user
+        - anotheruser
+```
+
+---
+
 ### Reviewer group settings
 
 ##### name
@@ -112,53 +162,3 @@ A value of `all` means that all repo collaborators are reviewers in this group.
                     - staging  # review if merging to staging
                     - deploy  # review if merging to deploy
     ```
-
-
-
----
-
-#### Multiple reviewer groups example
-```yaml
-approve_by_comment: true
-approve_regex: '^:\+1:'
-reject_regex: '^No'
-reviewers:
-    -
-        name: admins
-        required: 2
-        members:
-            - a_user
-            - anotheruser
-    -
-        name: backend_devs
-        required: 1
-        members:
-            - backender_one
-        conditions:
-            labels:
-                - backend-review
-            branches:
-                - staging
-    -
-        name: designers
-        required: 1
-        members:
-            - designerA
-            - designerB
-        conditions:
-            files:
-                - "*.png"
-                - "*.jpg"
-
-```
-
-#### Single reviewer group example
-```yaml
-approve_by_comment: false
-approve_regex: 'LGTM'
-reviewers:
-    required: 1
-    members:
-        - a_user
-        - anotheruser
-```
