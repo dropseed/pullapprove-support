@@ -26,6 +26,9 @@ reviewers:
         members:
             - a_user
             - anotheruser
+        conditions:
+            branches:
+                - master  # only need to approve if merging to master
     -
         name: backend_devs
         required: 1
@@ -37,5 +40,11 @@ reviewers:
         members:
             - designerA
             - designerB
+        conditions:
+            labels:
+                - design-review
+            files:
+                - "*.png"
+                - "*.jpg"
 
 ```
