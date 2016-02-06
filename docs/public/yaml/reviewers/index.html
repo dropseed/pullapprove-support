@@ -154,7 +154,7 @@
 
 <h5 id="required:0f435dbce8eb2542a19d6d5ea7ebce44">required</h5>
 
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any integer > -1</span></div>
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any integer >= -1</span></div>
 
 <p>The number of approvals required out of this group.</p>
 
@@ -169,6 +169,69 @@
 <p>The members of this reviewer group, by GitHub username.</p>
 
 <p>A value of <code>all</code> means that all repo collaborators are reviewers in this group.</p>
+
+<hr />
+
+<h5 id="conditions:0f435dbce8eb2542a19d6d5ea7ebce44">conditions</h5>
+
+<ul>
+<li><p>labels</p>
+
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of label slugs</span></div>
+
+<p>If any of these labels are present on the PR, this group must review the PR.</p>
+
+<pre><code class="language-yaml">reviewers:
+    -
+        name: review-by-label
+        required: 1
+        members:
+            - x
+            - y
+        conditions:
+            labels:
+                - needs-review
+</code></pre></li>
+
+<li><p>files</p>
+
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of Unix shell-style strings</span></div>
+
+<p>If any of these files were modified in the PR, this group must review the PR.</p>
+
+<p>File patterns written using Unix shell-style wildcards and matched using <a href="https://docs.python.org/2/library/fnmatch.html">Python&rsquo;s <code>fnmatch</code></a>.</p>
+
+<pre><code class="language-yaml">reviewers:
+    -
+        name: review-by-files
+        required: 1
+        members:
+            - x
+            - y
+        conditions:
+            files:
+                - &quot;*.md&quot;  # review if changed markdown files
+                - &quot;docs/*&quot;  # review if edited docs
+</code></pre></li>
+
+<li><p>branches</p>
+
+<p><div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of branch names</span></div>
+If PR is merging into one of these branches, this group must review the PR.</p>
+
+<pre><code class="language-yaml">reviewers:
+    -
+        name: review-by-branches
+        required: 1
+        members:
+            - x
+            - y
+        conditions:
+            branches:
+                - staging  # review if merging to staging
+                - deploy  # review if merging to deploy
+</code></pre></li>
+</ul>
 
 <hr />
 
@@ -189,12 +252,21 @@ reviewers:
         required: 1
         members:
             - backender_one
+        conditions:
+            labels:
+                - backend-review
+            branches:
+                - staging
     -
         name: designers
         required: 1
         members:
             - designerA
             - designerB
+        conditions:
+            files:
+                - &quot;*.png&quot;
+                - &quot;*.jpg&quot;
 
 </code></pre>
 

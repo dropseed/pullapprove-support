@@ -34,7 +34,7 @@ A name to refer to this group of reviewers. Used in status messages. Optional if
 ---
 
 ##### required
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any integer > -1</span></div>
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any integer >= -1</span></div>
 
 The number of approvals required out of this group.
 
@@ -48,6 +48,72 @@ A value of `-1` means that approval is required from all members.
 The members of this reviewer group, by GitHub username.
 
 A value of `all` means that all repo collaborators are reviewers in this group.
+
+---
+
+##### conditions
+
+- labels
+
+    <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of label slugs</span></div>
+
+    If any of these labels are present on the PR, this group must review the PR.
+
+    ```yaml
+    reviewers:
+        -
+            name: review-by-label
+            required: 1
+            members:
+                - x
+                - y
+            conditions:
+                labels:
+                    - needs-review
+    ```
+
+- files
+
+    <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of Unix shell-style strings</span></div>
+
+    If any of these files were modified in the PR, this group must review the PR.
+
+    File patterns written using Unix shell-style wildcards and matched using [Python's `fnmatch`](https://docs.python.org/2/library/fnmatch.html).
+
+    ```yaml
+    reviewers:
+        -
+            name: review-by-files
+            required: 1
+            members:
+                - x
+                - y
+            conditions:
+                files:
+                    - "*.md"  # review if changed markdown files
+                    - "docs/*"  # review if edited docs
+    ```
+
+- branches
+
+    <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of branch names</span></div>
+    If PR is merging into one of these branches, this group must review the PR.
+
+    ```yaml
+    reviewers:
+        -
+            name: review-by-branches
+            required: 1
+            members:
+                - x
+                - y
+            conditions:
+                branches:
+                    - staging  # review if merging to staging
+                    - deploy  # review if merging to deploy
+    ```
+
+
 
 ---
 
@@ -68,12 +134,21 @@ reviewers:
         required: 1
         members:
             - backender_one
+        conditions:
+            labels:
+                - backend-review
+            branches:
+                - staging
     -
         name: designers
         required: 1
         members:
             - designerA
             - designerB
+        conditions:
+            files:
+                - "*.png"
+                - "*.jpg"
 
 ```
 
