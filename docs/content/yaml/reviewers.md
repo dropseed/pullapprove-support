@@ -95,7 +95,7 @@ A value of `-1` means that approval is required from all members.
 ##### members
 <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of username strings</span> <span class="docs-yaml-value">"all"</span></div>
 
-The members of this reviewer group, by GitHub username.
+The members of this reviewer group, by case-sensitive GitHub username.
 
 A value of `all` means that all repo collaborators are reviewers in this group.
 
