@@ -184,7 +184,7 @@ reviewers:
 
 &lt;div class=&#34;docs-yaml-values&#34;&gt;Possible values: &lt;span class=&#34;docs-yaml-value&#34;&gt;array of username strings&lt;/span&gt; &lt;span class=&#34;docs-yaml-value&#34;&gt;&#34;all&#34;&lt;/span&gt;&lt;/div&gt;
 
-&lt;p&gt;The members of this reviewer group, by GitHub username.&lt;/p&gt;
+&lt;p&gt;The members of this reviewer group, by case-sensitive GitHub username.&lt;/p&gt;
 
 &lt;p&gt;A value of &lt;code&gt;all&lt;/code&gt; means that all repo collaborators are reviewers in this group.&lt;/p&gt;
 
