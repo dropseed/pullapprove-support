@@ -1,0 +1,6 @@
+approve_by_comment: true
+approve_regex: '^:\+1:'
+reviewers:
+  required: 1
+  members:
+    - davegaeddert
