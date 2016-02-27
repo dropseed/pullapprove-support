@@ -378,6 +378,7 @@ If PR is merging into one of these branches, this group must review the PR.&lt;/
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_by_comment: true
 approve_regex: &#39;^:\+1:&#39;
 reject_regex: &#39;^No&#39;
+reject_value: -1
 reset_on_push: true
 author_approval: ignored
 reviewers:
@@ -408,6 +409,37 @@ reviewers:
                 - &amp;quot;*.png&amp;quot;
                 - &amp;quot;*.jpg&amp;quot;
 
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>reject_value</title>
+      <link>http://docs.pullapprove.com/yaml/reject_value/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs.pullapprove.com/yaml/reject_value/</guid>
+      <description>
+
+&lt;p&gt;Set a custom value for what a rejection is worth. Essentially allows rejections to cancel out approvals &amp;ndash; if set to -1, then every rejection would require 1 additional approval. If set to -2, then 1 rejection would require 2 more approvals.&lt;/p&gt;
+
+&lt;h4 id=&#34;examples:3fe7e7e541dbd0a8b4dd7c6cbb519c62&#34;&gt;Examples&lt;/h4&gt;
+
+&lt;p&gt;Rejections cancel out approvals 1-for-1&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;reject_value: -1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A single rejection rejects the PR (use any value &amp;gt; the number of reviewers you have)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;reject_value: -99
+reviewers:
+    required: 2
+    members:
+        - userone
+        - usertwo
+        - userthree
+        - userfour
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

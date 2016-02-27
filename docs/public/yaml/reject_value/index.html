@@ -112,178 +112,33 @@
 </div>
     <div class="col-sm-9">
         <div class="docs-content docs-yaml-content">
-            <h1 class="docs-title">reviewers</h1>
+            <h1 class="docs-title">reject_value</h1>
 
-            
-            
+            <div class="docs-yaml-values">Default: <span class="docs-yaml-value">0</span></div>
+            <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any integer &lt;= 0 (ex. -1)</span> </div>
             <hr>
             
 
-<p>This is a dynamic field for defining who reviewers are. See examples below for usage.</p>
+<p>Set a custom value for what a rejection is worth. Essentially allows rejections to cancel out approvals &ndash; if set to -1, then every rejection would require 1 additional approval. If set to -2, then 1 rejection would require 2 more approvals.</p>
 
-<p>Overview:</p>
+<h4 id="examples:3fe7e7e541dbd0a8b4dd7c6cbb519c62">Examples</h4>
 
-<ul>
-<li>add as many &ldquo;reviewer groups&rdquo; as you like</li>
-<li>for each group:
+<p>Rejections cancel out approvals 1-for-1</p>
 
-<ul>
-<li>give it a name</li>
-<li>decide how many approvals are required</li>
-<li>choose the members</li>
-</ul></li>
-<li>once approval has passed for all groups, the PR is approved</li>
-</ul>
-
-<p>The structure is simple, yet powerful. Best explained by examples:</p>
-
-<ul>
-<li>require approval from 1 frontend dev, 1 backend dev, 1 admin</li>
-<li>require approval from 2 data scientists and 2 data engineers</li>
-<li>require approval from 2 developers, 1 consultant, 2 account managers</li>
-<li>require approval from&hellip;</li>
-</ul>
-
-<hr />
-
-<h4 id="multiple-reviewer-groups-example:0f435dbce8eb2542a19d6d5ea7ebce44">Multiple reviewer groups example</h4>
-
-<pre><code class="language-yaml">approve_by_comment: true
-approve_regex: '^:\+1:'
-reject_regex: '^No'
-reviewers:
-    -
-        name: admins
-        required: 2
-        members:
-            - a_user
-            - anotheruser
-    -
-        name: backend_devs
-        required: 1
-        members:
-            - backender_one
-        conditions:
-            labels:
-                - backend-review
-            branches:
-                - staging
-    -
-        name: designers
-        required: 1
-        members:
-            - designerA
-            - designerB
-        conditions:
-            files:
-                - &quot;*.png&quot;
-                - &quot;*.jpg&quot;
-
+<pre><code class="language-yaml">reject_value: -1
 </code></pre>
 
-<h4 id="single-reviewer-group-example:0f435dbce8eb2542a19d6d5ea7ebce44">Single reviewer group example</h4>
+<p>A single rejection rejects the PR (use any value &gt; the number of reviewers you have)</p>
 
-<pre><code class="language-yaml">approve_by_comment: false
-approve_regex: 'LGTM'
+<pre><code class="language-yaml">reject_value: -99
 reviewers:
-    required: 1
+    required: 2
     members:
-        - a_user
-        - anotheruser
+        - userone
+        - usertwo
+        - userthree
+        - userfour
 </code></pre>
-
-<hr />
-
-<h3 id="reviewer-group-settings:0f435dbce8eb2542a19d6d5ea7ebce44">Reviewer group settings</h3>
-
-<h5 id="name:0f435dbce8eb2542a19d6d5ea7ebce44">name</h5>
-
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any string</span></div>
-
-<p>A name to refer to this group of reviewers. Used in status messages. Optional if there is only one reviewer group.</p>
-
-<hr />
-
-<h5 id="required:0f435dbce8eb2542a19d6d5ea7ebce44">required</h5>
-
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any integer >= -1</span></div>
-
-<p>The number of approvals required out of this group.</p>
-
-<p>A value of <code>-1</code> means that approval is required from all members.</p>
-
-<hr />
-
-<h5 id="members:0f435dbce8eb2542a19d6d5ea7ebce44">members</h5>
-
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of username strings</span> <span class="docs-yaml-value">"all"</span></div>
-
-<p>The members of this reviewer group, by case-sensitive GitHub username.</p>
-
-<p>A value of <code>all</code> means that all repo collaborators are reviewers in this group.</p>
-
-<hr />
-
-<h5 id="conditions:0f435dbce8eb2542a19d6d5ea7ebce44">conditions</h5>
-
-<ul>
-<li><p>labels</p>
-
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of label slugs</span></div>
-
-<p>If any of these labels are present on the PR, this group must review the PR.</p>
-
-<pre><code class="language-yaml">reviewers:
-    -
-        name: review-by-label
-        required: 1
-        members:
-            - x
-            - y
-        conditions:
-            labels:
-                - needs-review
-</code></pre></li>
-
-<li><p>files</p>
-
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of Unix shell-style strings</span></div>
-
-<p>If any of these files were modified in the PR, this group must review the PR.</p>
-
-<p>File patterns written using Unix shell-style wildcards and matched using <a href="https://docs.python.org/2/library/fnmatch.html">Python&rsquo;s <code>fnmatch</code></a>.</p>
-
-<pre><code class="language-yaml">reviewers:
-    -
-        name: review-by-files
-        required: 1
-        members:
-            - x
-            - y
-        conditions:
-            files:
-                - &quot;*.md&quot;  # review if changed markdown files
-                - &quot;docs/*&quot;  # review if edited docs
-</code></pre></li>
-
-<li><p>branches</p>
-
-<p><div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of branch names</span></div>
-If PR is merging into one of these branches, this group must review the PR.</p>
-
-<pre><code class="language-yaml">reviewers:
-    -
-        name: review-by-branches
-        required: 1
-        members:
-            - x
-            - y
-        conditions:
-            branches:
-                - staging  # review if merging to staging
-                - deploy  # review if merging to deploy
-</code></pre></li>
-</ul>
 
         </div>
     </div>
