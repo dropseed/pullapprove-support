@@ -4,6 +4,8 @@
     <div class="col-sm-3">{{ partial "sidebar.html" . }}</div>
     <div class="col-sm-9">
         <div class="docs-content docs-yaml-content">
+            {{ if .Params.pro }}{{ partial "pro-plan-callout.html" . }}{{ end }}
+
             <h1 class="docs-title">{{ .Title }}</h1>
 
             {{ if .Params.default_value }}<div class="docs-yaml-values">Default: <span class="docs-yaml-value">{{ .Params.default_value }}</span></div>{{ end }}

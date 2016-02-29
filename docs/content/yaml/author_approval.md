@@ -6,6 +6,7 @@ possible_values:
     - "ignored"
     - "required"
 title: author_approval
+pro: no
 ---
 
 Whether or not approval is required by the author of the pull request.

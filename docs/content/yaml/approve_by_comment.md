@@ -6,6 +6,7 @@ possible_values:
     - "false"
 menu: yaml_settings
 title: approve_by_comment
+pro: no
 ---
 
 Enable parsing of pull request comments on github.com to trigger approval status.

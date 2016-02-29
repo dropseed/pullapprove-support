@@ -5,6 +5,7 @@ menu: yaml_settings
 possible_values:
     - "any valid regex, in a *single-quoted* string"
 title: reject_regex
+pro: no
 ---
 
 Set a custom regular expression to use when parsing pull request comments for rejection.

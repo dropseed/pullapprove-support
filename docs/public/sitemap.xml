@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://docs.pullapprove.com/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2016-02-04T20:19:35-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/extends/</loc>
+    <loc>http://localhost:1313/yaml/extends/</loc>
     <lastmod>2016-02-04T20:19:35-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml-templates/</loc>
+    <loc>http://localhost:1313/yaml-templates/</loc>
     <lastmod>2016-02-04T19:59:38-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/reset_on_push/</loc>
+    <loc>http://localhost:1313/yaml/reset_on_push/</loc>
     <lastmod>2015-12-30T20:55:54-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/author_approval/</loc>
+    <loc>http://localhost:1313/yaml/author_approval/</loc>
     <lastmod>2015-12-30T20:55:15-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/reviewers/</loc>
+    <loc>http://localhost:1313/yaml/reviewers/</loc>
     <lastmod>2015-12-30T20:19:51-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/reject_regex/</loc>
+    <loc>http://localhost:1313/yaml/reject_regex/</loc>
     <lastmod>2015-12-30T20:19:46-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/approve_regex/</loc>
+    <loc>http://localhost:1313/yaml/approve_regex/</loc>
     <lastmod>2015-12-30T20:19:42-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/approve_by_comment/</loc>
+    <loc>http://localhost:1313/yaml/approve_by_comment/</loc>
     <lastmod>2015-12-30T19:59:05-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/</loc>
+    <loc>http://localhost:1313/yaml/</loc>
     <lastmod>2015-12-11T23:39:09-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/reject_value/</loc>
+    <loc>http://localhost:1313/yaml/reject_value/</loc>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/reset_on_reopened/</loc>
+    <loc>http://localhost:1313/yaml/reset_on_reopened/</loc>
   </url>
   
 </urlset>

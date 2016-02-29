@@ -4,12 +4,13 @@ title: "YAML templates"
 menu: "sidebar"
 
 ---
+<div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use this feature.</div>
 
 ## YAML templates
 
 Templates are a great way to keep the key preferences for your organization in one location, and easily extend them on a per-repo basis.
 
-Templates are created and managed on pullapprove.com. **You can find edit templates at pullapprove.com/YOUR_ORG** or by clicking your organization name when browsing repos on pullapprove.com.
+Templates are created and managed on pullapprove.com. **You can find edit  at pullapprove.com/YOUR_ORG** or by clicking your organization name when browsing repos on pullapprove.com.
 
 An example template to contain some general rules for your organization.
 

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PullApprove Docs</title>
-    <link>http://docs.pullapprove.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on PullApprove Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Feb 2016 20:19:35 -0600</lastBuildDate>
-    <atom:link href="http://docs.pullapprove.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>extends</title>
-      <link>http://docs.pullapprove.com/yaml/extends/</link>
+      <link>http://localhost:1313/yaml/extends/</link>
       <pubDate>Thu, 04 Feb 2016 20:19:35 -0600</pubDate>
       
-      <guid>http://docs.pullapprove.com/yaml/extends/</guid>
+      <guid>http://localhost:1313/yaml/extends/</guid>
       <description>
 
-&lt;p&gt;Extend a &lt;a href=&#34;http://docs.pullapprove.com/yaml-templates&#34;&gt;YAML template&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Extend a &lt;a href=&#34;http://localhost:1313/yaml-templates&#34;&gt;YAML template&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Any settings including in the same .pullapprove.yml will override the settings in the template (if they exist).&lt;/p&gt;
 
@@ -43,17 +43,19 @@ reviewers:
     
     <item>
       <title>YAML templates</title>
-      <link>http://docs.pullapprove.com/yaml-templates/</link>
+      <link>http://localhost:1313/yaml-templates/</link>
       <pubDate>Thu, 04 Feb 2016 19:59:38 -0600</pubDate>
       
-      <guid>http://docs.pullapprove.com/yaml-templates/</guid>
+      <guid>http://localhost:1313/yaml-templates/</guid>
       <description>
+
+&lt;div class=&#34;pro-required callout&#34;&gt;&lt;span class=&#34;fa fa-fw fa-level-up&#34;&gt;&lt;/span&gt; A &lt;a href=&#34;https://pullapprove.com/pricing/&#34;&gt;pro plan is required&lt;/a&gt; to use this feature.&lt;/div&gt;
 
 &lt;h2 id=&#34;yaml-templates:251301b78c9668a7f5580165a95069ff&#34;&gt;YAML templates&lt;/h2&gt;
 
 &lt;p&gt;Templates are a great way to keep the key preferences for your organization in one location, and easily extend them on a per-repo basis.&lt;/p&gt;
 
-&lt;p&gt;Templates are created and managed on pullapprove.com. &lt;strong&gt;You can find edit templates at pullapprove.com/YOUR_ORG&lt;/strong&gt; or by clicking your organization name when browsing repos on pullapprove.com.&lt;/p&gt;
+&lt;p&gt;Templates are created and managed on pullapprove.com. &lt;strong&gt;You can find edit  at pullapprove.com/YOUR_ORG&lt;/strong&gt; or by clicking your organization name when browsing repos on pullapprove.com.&lt;/p&gt;
 
 &lt;p&gt;An example template to contain some general rules for your organization.&lt;/p&gt;
 
@@ -81,20 +83,20 @@ reset_on_push: false  # on this repo, we don&#39;t want to reset approvals on pu
     
     <item>
       <title>reset_on_push</title>
-      <link>http://docs.pullapprove.com/yaml/reset_on_push/</link>
+      <link>http://localhost:1313/yaml/reset_on_push/</link>
       <pubDate>Wed, 30 Dec 2015 20:55:54 -0600</pubDate>
       
-      <guid>http://docs.pullapprove.com/yaml/reset_on_push/</guid>
+      <guid>http://localhost:1313/yaml/reset_on_push/</guid>
       <description>&lt;p&gt;Whether or not approval statuses get reset to &amp;ldquo;pending&amp;rdquo; when new commits are pushed to a PR. If &lt;code&gt;false&lt;/code&gt;, the PR effectively gets approved once. If &lt;code&gt;true&lt;/code&gt;, any time new commits are pushed, those changes will need to be approved.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>author_approval</title>
-      <link>http://docs.pullapprove.com/yaml/author_approval/</link>
+      <link>http://localhost:1313/yaml/author_approval/</link>
       <pubDate>Wed, 30 Dec 2015 20:55:15 -0600</pubDate>
       
-      <guid>http://docs.pullapprove.com/yaml/author_approval/</guid>
+      <guid>http://localhost:1313/yaml/author_approval/</guid>
       <description>
 
 &lt;p&gt;Whether or not approval is required by the author of the pull request.&lt;/p&gt;
@@ -117,10 +119,10 @@ reset_on_push: false  # on this repo, we don&#39;t want to reset approvals on pu
     
     <item>
       <title>reviewers</title>
-      <link>http://docs.pullapprove.com/yaml/reviewers/</link>
+      <link>http://localhost:1313/yaml/reviewers/</link>
       <pubDate>Wed, 30 Dec 2015 20:19:51 -0600</pubDate>
       
-      <guid>http://docs.pullapprove.com/yaml/reviewers/</guid>
+      <guid>http://localhost:1313/yaml/reviewers/</guid>
       <description>
 
 &lt;p&gt;This is a dynamic field for defining who reviewers are. See examples below for usage.&lt;/p&gt;
@@ -230,6 +232,8 @@ reviewers:
 
 &lt;h5 id=&#34;conditions:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;conditions&lt;/h5&gt;
 
+&lt;div class=&#34;pro-required callout&#34;&gt;&lt;span class=&#34;fa fa-fw fa-level-up&#34;&gt;&lt;/span&gt; A &lt;a href=&#34;https://pullapprove.com/pricing/&#34;&gt;pro plan is required&lt;/a&gt; to use conditions.&lt;/div&gt;
+
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;labels&lt;/p&gt;
 
@@ -293,10 +297,10 @@ If PR is merging into one of these branches, this group must review the PR.&lt;/
     
     <item>
       <title>reject_regex</title>
-      <link>http://docs.pullapprove.com/yaml/reject_regex/</link>
+      <link>http://localhost:1313/yaml/reject_regex/</link>
       <pubDate>Wed, 30 Dec 2015 20:19:46 -0600</pubDate>
       
-      <guid>http://docs.pullapprove.com/yaml/reject_regex/</guid>
+      <guid>http://localhost:1313/yaml/reject_regex/</guid>
       <description>
 
 &lt;p&gt;Set a custom regular expression to use when parsing pull request comments for rejection.&lt;/p&gt;
@@ -321,10 +325,10 @@ If PR is merging into one of these branches, this group must review the PR.&lt;/
     
     <item>
       <title>approve_regex</title>
-      <link>http://docs.pullapprove.com/yaml/approve_regex/</link>
+      <link>http://localhost:1313/yaml/approve_regex/</link>
       <pubDate>Wed, 30 Dec 2015 20:19:42 -0600</pubDate>
       
-      <guid>http://docs.pullapprove.com/yaml/approve_regex/</guid>
+      <guid>http://localhost:1313/yaml/approve_regex/</guid>
       <description>
 
 &lt;p&gt;Set a custom regular expression to use when parsing pull request comments for approval.&lt;/p&gt;
@@ -349,20 +353,20 @@ If PR is merging into one of these branches, this group must review the PR.&lt;/
     
     <item>
       <title>approve_by_comment</title>
-      <link>http://docs.pullapprove.com/yaml/approve_by_comment/</link>
+      <link>http://localhost:1313/yaml/approve_by_comment/</link>
       <pubDate>Wed, 30 Dec 2015 19:59:05 -0600</pubDate>
       
-      <guid>http://docs.pullapprove.com/yaml/approve_by_comment/</guid>
+      <guid>http://localhost:1313/yaml/approve_by_comment/</guid>
       <description>&lt;p&gt;Enable parsing of pull request comments on github.com to trigger approval status.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>YAML overview</title>
-      <link>http://docs.pullapprove.com/yaml/</link>
+      <link>http://localhost:1313/yaml/</link>
       <pubDate>Fri, 11 Dec 2015 23:39:09 -0600</pubDate>
       
-      <guid>http://docs.pullapprove.com/yaml/</guid>
+      <guid>http://localhost:1313/yaml/</guid>
       <description>
 
 &lt;h2 id=&#34;yaml-settings-configuration:26cdd1dbcdcbaf3edf773c725e4fa9fb&#34;&gt;YAML settings configuration&lt;/h2&gt;
@@ -415,10 +419,10 @@ reviewers:
     
     <item>
       <title>reject_value</title>
-      <link>http://docs.pullapprove.com/yaml/reject_value/</link>
+      <link>http://localhost:1313/yaml/reject_value/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs.pullapprove.com/yaml/reject_value/</guid>
+      <guid>http://localhost:1313/yaml/reject_value/</guid>
       <description>
 
 &lt;p&gt;Set a custom value for what a rejection is worth. Essentially allows rejections to cancel out approvals &amp;ndash; if set to -1, then every rejection would require 1 additional approval. If set to -2, then 1 rejection would require 2 more approvals.&lt;/p&gt;
@@ -446,10 +450,10 @@ reviewers:
     
     <item>
       <title>reset_on_reopened</title>
-      <link>http://docs.pullapprove.com/yaml/reset_on_reopened/</link>
+      <link>http://localhost:1313/yaml/reset_on_reopened/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs.pullapprove.com/yaml/reset_on_reopened/</guid>
+      <guid>http://localhost:1313/yaml/reset_on_reopened/</guid>
       <description>&lt;p&gt;Whether or not approval statuses get reset to &amp;ldquo;pending&amp;rdquo; when a pull request is re-opened.&lt;/p&gt;
 </description>
     </item>

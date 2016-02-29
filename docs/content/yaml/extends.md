@@ -5,6 +5,7 @@ menu: yaml_settings
 possible_values:
     - "any string matching a template name"
 title: extends
+pro: yes
 ---
 
 Extend a [YAML template](/yaml-templates).

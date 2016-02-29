@@ -4,6 +4,7 @@ default_value: ""
 menu: yaml_settings
 possible_values: ""
 title: reviewers
+pro: no
 ---
 
 This is a dynamic field for defining who reviewers are. See examples below for usage.
@@ -102,6 +103,8 @@ A value of `all` means that all repo collaborators are reviewers in this group.
 ---
 
 ##### conditions
+
+<div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use conditions.</div>
 
 - labels
 
