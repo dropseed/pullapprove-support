@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/pullapprove/support.png?label=ready&title=Ready)](https://waffle.io/pullapprove/support)
 ![PullApprove logo](https://pullapprove.com/static/img/logos/pull-approve-logo-gray-dk.png)
 ---
 # PullApprove Support
