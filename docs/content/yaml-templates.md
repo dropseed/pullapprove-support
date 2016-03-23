@@ -4,7 +4,7 @@ title: "YAML templates"
 menu: "sidebar"
 
 ---
-<div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use this feature.</div>
+<div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use this feature on private repos.</div>
 
 ## YAML templates
 

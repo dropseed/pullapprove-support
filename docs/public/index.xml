@@ -49,7 +49,7 @@ reviewers:
       <guid>http://docs.pullapprove.com/yaml-templates/</guid>
       <description>
 
-&lt;div class=&#34;pro-required callout&#34;&gt;&lt;span class=&#34;fa fa-fw fa-level-up&#34;&gt;&lt;/span&gt; A &lt;a href=&#34;https://pullapprove.com/pricing/&#34;&gt;pro plan is required&lt;/a&gt; to use this feature.&lt;/div&gt;
+&lt;div class=&#34;pro-required callout&#34;&gt;&lt;span class=&#34;fa fa-fw fa-level-up&#34;&gt;&lt;/span&gt; A &lt;a href=&#34;https://pullapprove.com/pricing/&#34;&gt;pro plan is required&lt;/a&gt; to use this feature on private repos.&lt;/div&gt;
 
 &lt;h2 id=&#34;yaml-templates:251301b78c9668a7f5580165a95069ff&#34;&gt;YAML templates&lt;/h2&gt;
 
@@ -418,6 +418,16 @@ reviewers:
     </item>
     
     <item>
+      <title>reset_on_reopened</title>
+      <link>http://docs.pullapprove.com/yaml/reset_on_reopened/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs.pullapprove.com/yaml/reset_on_reopened/</guid>
+      <description>&lt;p&gt;Whether or not approval statuses get reset to &amp;ldquo;pending&amp;rdquo; when a pull request is re-opened.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>reject_value</title>
       <link>http://docs.pullapprove.com/yaml/reject_value/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -445,16 +455,6 @@ reviewers:
         - userthree
         - userfour
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>reset_on_reopened</title>
-      <link>http://docs.pullapprove.com/yaml/reset_on_reopened/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.pullapprove.com/yaml/reset_on_reopened/</guid>
-      <description>&lt;p&gt;Whether or not approval statuses get reset to &amp;ldquo;pending&amp;rdquo; when a pull request is re-opened.&lt;/p&gt;
 </description>
     </item>
     
