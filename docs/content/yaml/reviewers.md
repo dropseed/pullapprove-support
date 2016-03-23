@@ -104,7 +104,7 @@ A value of `all` means that all repo collaborators are reviewers in this group.
 
 ##### conditions
 
-<div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use conditions.</div>
+<div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use conditions on private repos.</div>
 
 - labels
 
