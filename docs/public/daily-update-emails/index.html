@@ -113,33 +113,18 @@
 </div>
 </div>
     <div class="col-sm-9">
-        <div class="docs-content docs-yaml-content">
+        <div class="docs-content">
             
 
-            <h1 class="docs-title">reject_regex</h1>
+<h2 id="daily-update-emails:c4cc9df228d1ebe8c03efe0d46cc7674">Daily update emails</h2>
 
-            <div class="docs-yaml-values">Default: <span class="docs-yaml-value">&#39;^Rejected&#39;</span></div>
-            <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any valid regex, in a <em>single-quoted</em> string</span> </div>
-            <hr>
-            
+<p>Sometimes it can be hard to keep code reviews moving forward. To help deal with that, PullApprove can send you (and your reviewers) a daily update every morning listing the open PR&rsquo;s waiting for your review, as well as the PR&rsquo;s that you have opened that still need to be finished.</p>
 
-<p>Set a custom regular expression to use when parsing pull request comments for rejection.</p>
+<p><a href="https://pullapprove.com/settings/?daily_digest_email_enabled=true">Enable daily update emails for your account <span class="fa fa-arrow-right"></span></a></p>
 
-<blockquote>
-<p>Notes:</p>
+<hr />
 
-<ul>
-<li><code>approve_by_comment</code> must be enabled to use this.</li>
-<li>We recommend starting with <code>^</code>, to only match strings at the beginning of a line. In our experience this makes approval more intentional, and also avoids issues with comments via email where previous content may be embedded in a blockquote (<code>&gt;</code>) that could otherwise trigger mistaken approval.</li>
-</ul>
-</blockquote>
-
-<h4 id="examples:9572bb22eda4a1bea1e12f87c38cebcd">Examples</h4>
-
-<p>Multiple triggers</p>
-
-<pre><code class="language-yaml">reject_regex: '^(Rejected|:-1:)'
-</code></pre>
+<p><img src="http://docs.pullapprove.com/img/daily-update-email-example.png" alt="Daily update email example" /></p>
 
         </div>
     </div>

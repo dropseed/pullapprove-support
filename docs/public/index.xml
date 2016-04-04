@@ -6,8 +6,28 @@
     <description>Recent content on PullApprove Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2016 20:19:35 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 04 Apr 2016 19:59:38 -0600</lastBuildDate>
     <atom:link href="http://docs.pullapprove.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Daily update emails</title>
+      <link>http://docs.pullapprove.com/daily-update-emails/</link>
+      <pubDate>Mon, 04 Apr 2016 19:59:38 -0600</pubDate>
+      
+      <guid>http://docs.pullapprove.com/daily-update-emails/</guid>
+      <description>
+
+&lt;h2 id=&#34;daily-update-emails:c4cc9df228d1ebe8c03efe0d46cc7674&#34;&gt;Daily update emails&lt;/h2&gt;
+
+&lt;p&gt;Sometimes it can be hard to keep code reviews moving forward. To help deal with that, PullApprove can send you (and your reviewers) a daily update every morning listing the open PR&amp;rsquo;s waiting for your review, as well as the PR&amp;rsquo;s that you have opened that still need to be finished.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pullapprove.com/settings/?daily_digest_email_enabled=true&#34;&gt;Enable daily update emails for your account &lt;span class=&#34;fa fa-arrow-right&#34;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://docs.pullapprove.com/img/daily-update-email-example.png&#34; alt=&#34;Daily update email example&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>extends</title>
@@ -418,16 +438,6 @@ reviewers:
     </item>
     
     <item>
-      <title>reset_on_reopened</title>
-      <link>http://docs.pullapprove.com/yaml/reset_on_reopened/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.pullapprove.com/yaml/reset_on_reopened/</guid>
-      <description>&lt;p&gt;Whether or not approval statuses get reset to &amp;ldquo;pending&amp;rdquo; when a pull request is re-opened.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>reject_value</title>
       <link>http://docs.pullapprove.com/yaml/reject_value/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -455,6 +465,16 @@ reviewers:
         - userthree
         - userfour
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>reset_on_reopened</title>
+      <link>http://docs.pullapprove.com/yaml/reset_on_reopened/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs.pullapprove.com/yaml/reset_on_reopened/</guid>
+      <description>&lt;p&gt;Whether or not approval statuses get reset to &amp;ldquo;pending&amp;rdquo; when a pull request is re-opened.&lt;/p&gt;
 </description>
     </item>
     
