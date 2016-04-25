@@ -58,11 +58,11 @@
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/reject_value/</loc>
+    <loc>http://docs.pullapprove.com/yaml/reset_on_reopened/</loc>
   </url>
   
   <url>
-    <loc>http://docs.pullapprove.com/yaml/reset_on_reopened/</loc>
+    <loc>http://docs.pullapprove.com/yaml/reject_value/</loc>
   </url>
   
 </urlset>
