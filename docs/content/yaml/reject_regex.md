@@ -10,6 +10,8 @@ pro: no
 
 Set a custom regular expression to use when parsing pull request comments for rejection.
 
+Due to recent changes by GitHub, we now *automatically* check for the Unicode equivalents of emojis. For example, if you use `:\+1:` in your regex, we'll also check for `\U0001f44d`. **You do not have to add Unicode to your regular expressions.** An added bonus here is that alternative aliases will also be detected automatically, again if you use `:\+1:`, we'll also match if a team member uses `:thumbsup:`!
+
 > Notes:
 >
 >    - `approve_by_comment` must be enabled to use this.

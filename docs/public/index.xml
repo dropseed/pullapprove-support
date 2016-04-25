@@ -325,6 +325,8 @@ If PR is merging into one of these branches, this group must review the PR.&lt;/
 
 &lt;p&gt;Set a custom regular expression to use when parsing pull request comments for rejection.&lt;/p&gt;
 
+&lt;p&gt;Due to recent changes by GitHub, we now &lt;em&gt;automatically&lt;/em&gt; check for the Unicode equivalents of emojis. For example, if you use &lt;code&gt;:\+1:&lt;/code&gt; in your regex, we&amp;rsquo;ll also check for &lt;code&gt;\U0001f44d&lt;/code&gt;. &lt;strong&gt;You do not have to add Unicode to your regular expressions.&lt;/strong&gt; An added bonus here is that alternative aliases will also be detected automatically, again if you use &lt;code&gt;:\+1:&lt;/code&gt;, we&amp;rsquo;ll also match if a team member uses &lt;code&gt;:thumbsup:&lt;/code&gt;!&lt;/p&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;Notes:&lt;/p&gt;
 
@@ -353,6 +355,8 @@ If PR is merging into one of these branches, this group must review the PR.&lt;/
 
 &lt;p&gt;Set a custom regular expression to use when parsing pull request comments for approval.&lt;/p&gt;
 
+&lt;p&gt;Due to recent changes by GitHub, we now &lt;em&gt;automatically&lt;/em&gt; check for the Unicode equivalents of emojis. For example, if you use &lt;code&gt;:\+1:&lt;/code&gt; in your regex, we&amp;rsquo;ll also check for &lt;code&gt;\U0001f44d&lt;/code&gt;. &lt;strong&gt;You do not have to add Unicode to your regular expressions.&lt;/strong&gt; An added bonus here is that alternative aliases will also be detected automatically, again if you use &lt;code&gt;:\+1:&lt;/code&gt;, we&amp;rsquo;ll also match if a team member uses &lt;code&gt;:thumbsup:&lt;/code&gt;!&lt;/p&gt;
+
 &lt;blockquote&gt;
 &lt;p&gt;Notes:&lt;/p&gt;
 
@@ -366,7 +370,7 @@ If PR is merging into one of these branches, this group must review the PR.&lt;/
 
 &lt;p&gt;Multiple triggers&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_regex: &#39;^(Approved|:shipit:)&#39;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;approve_regex: &#39;^(Approved|:shipit:|:\+1:)&#39;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

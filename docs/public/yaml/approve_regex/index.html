@@ -125,6 +125,8 @@
 
 <p>Set a custom regular expression to use when parsing pull request comments for approval.</p>
 
+<p>Due to recent changes by GitHub, we now <em>automatically</em> check for the Unicode equivalents of emojis. For example, if you use <code>:\+1:</code> in your regex, we&rsquo;ll also check for <code>\U0001f44d</code>. <strong>You do not have to add Unicode to your regular expressions.</strong> An added bonus here is that alternative aliases will also be detected automatically, again if you use <code>:\+1:</code>, we&rsquo;ll also match if a team member uses <code>:thumbsup:</code>!</p>
+
 <blockquote>
 <p>Notes:</p>
 
@@ -138,7 +140,7 @@
 
 <p>Multiple triggers</p>
 
-<pre><code class="language-yaml">approve_regex: '^(Approved|:shipit:)'
+<pre><code class="language-yaml">approve_regex: '^(Approved|:shipit:|:\+1:)'
 </code></pre>
 
         </div>
