@@ -52,9 +52,8 @@ reviewers:
     -
         name: designers
         required: 1
-        members:
-            - designerA
-            - designerB
+        teams:
+            - design
         conditions:
             files:
                 - "*.png"
@@ -99,6 +98,20 @@ A value of `-1` means that approval is required from all members.
 The members of this reviewer group, by GitHub username.
 
 A value of `all` means that all repo collaborators are reviewers in this group.
+
+A reviewer group must use either `members` or `teams`, but not both.
+
+---
+
+##### teams
+
+<div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use teams on private repos.</div>
+
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of team slugs</span></div>
+
+The GitHub teams whose members make up this reviewer group. Be sure to use the **slug** (lowercase, hyphenated) for the team names.
+
+A reviewer group must use either `members` or `teams`, but not both.
 
 ---
 

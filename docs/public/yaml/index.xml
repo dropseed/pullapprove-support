@@ -137,9 +137,8 @@ reviewers:
     -
         name: designers
         required: 1
-        members:
-            - designerA
-            - designerB
+        teams:
+            - design
         conditions:
             files:
                 - &amp;quot;*.png&amp;quot;
@@ -187,6 +186,20 @@ reviewers:
 &lt;p&gt;The members of this reviewer group, by GitHub username.&lt;/p&gt;
 
 &lt;p&gt;A value of &lt;code&gt;all&lt;/code&gt; means that all repo collaborators are reviewers in this group.&lt;/p&gt;
+
+&lt;p&gt;A reviewer group must use either &lt;code&gt;members&lt;/code&gt; or &lt;code&gt;teams&lt;/code&gt;, but not both.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;teams:0f435dbce8eb2542a19d6d5ea7ebce44&#34;&gt;teams&lt;/h5&gt;
+
+&lt;div class=&#34;pro-required callout&#34;&gt;&lt;span class=&#34;fa fa-fw fa-level-up&#34;&gt;&lt;/span&gt; A &lt;a href=&#34;https://pullapprove.com/pricing/&#34;&gt;pro plan is required&lt;/a&gt; to use teams on private repos.&lt;/div&gt;
+
+&lt;div class=&#34;docs-yaml-values&#34;&gt;Possible values: &lt;span class=&#34;docs-yaml-value&#34;&gt;array of team slugs&lt;/span&gt;&lt;/div&gt;
+
+&lt;p&gt;The GitHub teams whose members make up this reviewer group. Be sure to use the &lt;strong&gt;slug&lt;/strong&gt; (lowercase, hyphenated) for the team names.&lt;/p&gt;
+
+&lt;p&gt;A reviewer group must use either &lt;code&gt;members&lt;/code&gt; or &lt;code&gt;teams&lt;/code&gt;, but not both.&lt;/p&gt;
 
 &lt;hr /&gt;
 

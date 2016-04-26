@@ -69,11 +69,11 @@
     <h5 class="nav-heading">Docs</h5>
     <ul class="list-unstyled">
         
-        <li><a href="http://docs.pullapprove.com/daily-update-emails">Daily update emails</a></li>
+        <li><a href="http://docs.pullapprove.com/daily-update-emails/">Daily update emails</a></li>
         
-        <li><a href="http://docs.pullapprove.com/yaml">YAML overview</a></li>
+        <li><a href="http://docs.pullapprove.com/yaml/">YAML overview</a></li>
         
-        <li><a href="http://docs.pullapprove.com/yaml-templates">YAML templates</a></li>
+        <li><a href="http://docs.pullapprove.com/yaml-templates/">YAML templates</a></li>
         
     </ul>
 
@@ -81,23 +81,23 @@
         <h5 class="nav-heading">YAML Settings</h5>
         <ul class="list-unstyled">
             
-            <li><a href="http://docs.pullapprove.com/yaml/approve_by_comment">approve_by_comment</a></li>
+            <li><a href="http://docs.pullapprove.com/yaml/approve_by_comment/">approve_by_comment</a></li>
             
-            <li><a href="http://docs.pullapprove.com/yaml/approve_regex">approve_regex</a></li>
+            <li><a href="http://docs.pullapprove.com/yaml/approve_regex/">approve_regex</a></li>
             
-            <li><a href="http://docs.pullapprove.com/yaml/author_approval">author_approval</a></li>
+            <li><a href="http://docs.pullapprove.com/yaml/author_approval/">author_approval</a></li>
             
-            <li><a href="http://docs.pullapprove.com/yaml/extends">extends</a></li>
+            <li><a href="http://docs.pullapprove.com/yaml/extends/">extends</a></li>
             
-            <li><a href="http://docs.pullapprove.com/yaml/reject_regex">reject_regex</a></li>
+            <li><a href="http://docs.pullapprove.com/yaml/reject_regex/">reject_regex</a></li>
             
-            <li><a href="http://docs.pullapprove.com/yaml/reject_value">reject_value</a></li>
+            <li><a href="http://docs.pullapprove.com/yaml/reject_value/">reject_value</a></li>
             
-            <li><a href="http://docs.pullapprove.com/yaml/reset_on_push">reset_on_push</a></li>
+            <li><a href="http://docs.pullapprove.com/yaml/reset_on_push/">reset_on_push</a></li>
             
-            <li><a href="http://docs.pullapprove.com/yaml/reset_on_reopened">reset_on_reopened</a></li>
+            <li><a href="http://docs.pullapprove.com/yaml/reset_on_reopened/">reset_on_reopened</a></li>
             
-            <li><a href="http://docs.pullapprove.com/yaml/reviewers">reviewers</a></li>
+            <li><a href="http://docs.pullapprove.com/yaml/reviewers/">reviewers</a></li>
             
         </ul>
     </div>
@@ -175,9 +175,8 @@ reviewers:
     -
         name: designers
         required: 1
-        members:
-            - designerA
-            - designerB
+        teams:
+            - design
         conditions:
             files:
                 - &quot;*.png&quot;
@@ -225,6 +224,20 @@ reviewers:
 <p>The members of this reviewer group, by GitHub username.</p>
 
 <p>A value of <code>all</code> means that all repo collaborators are reviewers in this group.</p>
+
+<p>A reviewer group must use either <code>members</code> or <code>teams</code>, but not both.</p>
+
+<hr />
+
+<h5 id="teams:0f435dbce8eb2542a19d6d5ea7ebce44">teams</h5>
+
+<div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use teams on private repos.</div>
+
+<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of team slugs</span></div>
+
+<p>The GitHub teams whose members make up this reviewer group. Be sure to use the <strong>slug</strong> (lowercase, hyphenated) for the team names.</p>
+
+<p>A reviewer group must use either <code>members</code> or <code>teams</code>, but not both.</p>
 
 <hr />
 
