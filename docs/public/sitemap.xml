@@ -58,6 +58,14 @@
   </url>
   
   <url>
+    <loc>http://docs.pullapprove.com/yaml/always_pending/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs.pullapprove.com/yaml/always_rejected/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.pullapprove.com/yaml/reject_value/</loc>
   </url>
   

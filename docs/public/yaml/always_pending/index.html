@@ -118,195 +118,25 @@
 </div>
     <div class="col-sm-9">
         <div class="docs-content docs-yaml-content">
-            
+            <div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use this feature on private repos.</div>
 
-            <h1 class="docs-title">reviewers</h1>
+
+            <h1 class="docs-title">always_pending</h1>
 
             
             
             <hr>
-            
+            <p>A pull request matching any of these conditions will always have a &ldquo;pending&rdquo; status. Extremely useful for &ldquo;work in progress&rdquo; PR&rsquo;s.</p>
 
-<p>This is a dynamic field for defining who reviewers are. See examples below for usage.</p>
+<p>PR&rsquo;s can be matched by either their title (with a regex) or labels. You can use the <code>explanation</code> field if you want to write your own status message.</p>
 
-<p>Overview:</p>
-
-<ul>
-<li>add as many &ldquo;reviewer groups&rdquo; as you like</li>
-<li>for each group:
-
-<ul>
-<li>give it a name</li>
-<li>decide how many approvals are required</li>
-<li>choose the members</li>
-</ul></li>
-<li>once approval has passed for all groups, the PR is approved</li>
-</ul>
-
-<p>The structure is simple, yet powerful. Best explained by examples:</p>
-
-<ul>
-<li>require approval from 1 frontend dev, 1 backend dev, 1 admin</li>
-<li>require approval from 2 data scientists and 2 data engineers</li>
-<li>require approval from 2 developers, 1 consultant, 2 account managers</li>
-<li>require approval from&hellip;</li>
-</ul>
-
-<hr />
-
-<h4 id="multiple-reviewer-groups-example:0f435dbce8eb2542a19d6d5ea7ebce44">Multiple reviewer groups example</h4>
-
-<pre><code class="language-yaml">approve_by_comment: true
-approve_regex: '^:\+1:'
-reject_regex: '^No'
-reviewers:
-    -
-        name: admins
-        required: 2
-        members:
-            - a_user
-            - anotheruser
-    -
-        name: backend_devs
-        required: 1
-        members:
-            - backender_one
-        conditions:
-            labels:
-                - backend-review
-            branches:
-                - staging
-    -
-        name: designers
-        required: 1
-        teams:
-            - design
-        conditions:
-            files:
-                - &quot;*.png&quot;
-                - &quot;*.jpg&quot;
-
+<pre><code class="language-yaml">always_pending:
+    title_regex: '(WIP|wip)'
+    labels:
+        - wip
+    # custom message that will be used for the GitHub status
+    explanation: 'This PR is a work in progress...'
 </code></pre>
-
-<h4 id="single-reviewer-group-example:0f435dbce8eb2542a19d6d5ea7ebce44">Single reviewer group example</h4>
-
-<pre><code class="language-yaml">approve_by_comment: false
-approve_regex: 'LGTM'
-reviewers:
-    required: 1
-    members:
-        - a_user
-        - anotheruser
-</code></pre>
-
-<hr />
-
-<h3 id="reviewer-group-settings:0f435dbce8eb2542a19d6d5ea7ebce44">Reviewer group settings</h3>
-
-<h5 id="name:0f435dbce8eb2542a19d6d5ea7ebce44">name</h5>
-
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any string</span></div>
-
-<p>A name to refer to this group of reviewers. Used in status messages. Optional if there is only one reviewer group.</p>
-
-<hr />
-
-<h5 id="required:0f435dbce8eb2542a19d6d5ea7ebce44">required</h5>
-
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any integer >= -1</span></div>
-
-<p>The number of approvals required out of this group.</p>
-
-<p>A value of <code>-1</code> means that approval is required from all members.</p>
-
-<hr />
-
-<h5 id="members:0f435dbce8eb2542a19d6d5ea7ebce44">members</h5>
-
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of username strings</span> <span class="docs-yaml-value">"all"</span></div>
-
-<p>The members of this reviewer group, by GitHub username.</p>
-
-<p>A value of <code>all</code> means that all repo collaborators are reviewers in this group.</p>
-
-<p>A reviewer group must use either <code>members</code> or <code>teams</code>, but not both.</p>
-
-<hr />
-
-<h5 id="teams:0f435dbce8eb2542a19d6d5ea7ebce44">teams</h5>
-
-<div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use teams on private repos.</div>
-
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of team slugs</span></div>
-
-<p>The GitHub teams whose members make up this reviewer group. Be sure to use the <strong>slug</strong> (lowercase, hyphenated) for the team names.</p>
-
-<p>A reviewer group must use either <code>members</code> or <code>teams</code>, but not both.</p>
-
-<hr />
-
-<h5 id="conditions:0f435dbce8eb2542a19d6d5ea7ebce44">conditions</h5>
-
-<div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use conditions on private repos.</div>
-
-<ul>
-<li><p>labels</p>
-
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of label slugs</span></div>
-
-<p>If any of these labels are present on the PR, this group must review the PR.</p>
-
-<pre><code class="language-yaml">reviewers:
-    -
-        name: review-by-label
-        required: 1
-        members:
-            - x
-            - y
-        conditions:
-            labels:
-                - needs-review
-</code></pre></li>
-
-<li><p>files</p>
-
-<div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of Unix shell-style strings</span></div>
-
-<p>If any of these files were modified in the PR, this group must review the PR.</p>
-
-<p>File patterns written using Unix shell-style wildcards and matched using <a href="https://docs.python.org/2/library/fnmatch.html">Python&rsquo;s <code>fnmatch</code></a>.</p>
-
-<pre><code class="language-yaml">reviewers:
-    -
-        name: review-by-files
-        required: 1
-        members:
-            - x
-            - y
-        conditions:
-            files:
-                - &quot;*.md&quot;  # review if changed markdown files
-                - &quot;docs/*&quot;  # review if edited docs
-</code></pre></li>
-
-<li><p>branches</p>
-
-<p><div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">array of branch names</span></div>
-If PR is merging into one of these branches, this group must review the PR.</p>
-
-<pre><code class="language-yaml">reviewers:
-    -
-        name: review-by-branches
-        required: 1
-        members:
-            - x
-            - y
-        conditions:
-            branches:
-                - staging  # review if merging to staging
-                - deploy  # review if merging to deploy
-</code></pre></li>
-</ul>
 
         </div>
     </div>

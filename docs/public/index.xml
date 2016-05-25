@@ -455,6 +455,46 @@ reviewers:
     </item>
     
     <item>
+      <title>always_pending</title>
+      <link>http://docs.pullapprove.com/yaml/always_pending/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs.pullapprove.com/yaml/always_pending/</guid>
+      <description>&lt;p&gt;A pull request matching any of these conditions will always have a &amp;ldquo;pending&amp;rdquo; status. Extremely useful for &amp;ldquo;work in progress&amp;rdquo; PR&amp;rsquo;s.&lt;/p&gt;
+
+&lt;p&gt;PR&amp;rsquo;s can be matched by either their title (with a regex) or labels. You can use the &lt;code&gt;explanation&lt;/code&gt; field if you want to write your own status message.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;always_pending:
+    title_regex: &#39;(WIP|wip)&#39;
+    labels:
+        - wip
+    # custom message that will be used for the GitHub status
+    explanation: &#39;This PR is a work in progress...&#39;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>always_rejected</title>
+      <link>http://docs.pullapprove.com/yaml/always_rejected/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs.pullapprove.com/yaml/always_rejected/</guid>
+      <description>&lt;p&gt;A pull request matching any of these conditions will always have a &amp;ldquo;rejected&amp;rdquo; status.&lt;/p&gt;
+
+&lt;p&gt;PR&amp;rsquo;s can be matched by either their title (with a regex) or labels. You can use the &lt;code&gt;explanation&lt;/code&gt; field if you want to write your own status message.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;always_rejected:
+    title_regex: &#39;(WIP|wip)&#39;
+    labels:
+        - wip
+    # custom message that will be used for the GitHub status
+    explanation: &#39;This PR is a work in progress...&#39;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>reject_value</title>
       <link>http://docs.pullapprove.com/yaml/reject_value/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
