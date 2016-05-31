@@ -178,3 +178,19 @@ A reviewer group must use either `members` or `teams`, but not both.
                     - staging  # review if merging to staging
                     - deploy  # review if merging to deploy
     ```
+
+    Using the git range syntax, you can specify the base *and* head branches for more specific matches.
+    ```yaml
+    branches:
+        - deploy...master  # review if merging into "deploy" from "master" (i.e. `base...head`)
+        # you can also leave off the base, to target pulls coming from a specific branch name
+        - ...staging  # any pulls from staging into another branch need to be reviewed
+    ```
+
+    Branch conditions can also be negated.
+    ```yaml
+    branches:
+        - !staging  # nothing merging into staging needs to be reviewed
+        # or combined with base...head
+        - !staging...master  # merges from master into staging do not need to be reviewed
+    ```

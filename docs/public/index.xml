@@ -323,6 +323,22 @@ If PR is merging into one of these branches, this group must review the PR.&lt;/
             branches:
                 - staging  # review if merging to staging
                 - deploy  # review if merging to deploy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using the git range syntax, you can specify the base &lt;em&gt;and&lt;/em&gt; head branches for more specific matches.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;branches:
+    - deploy...master  # review if merging into &amp;quot;deploy&amp;quot; from &amp;quot;master&amp;quot; (i.e. `base...head`)
+    # you can also leave off the base, to target pulls coming from a specific branch name
+    - ...staging  # any pulls from staging into another branch need to be reviewed
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Branch conditions can also be negated.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;branches:
+    - !staging  # nothing merging into staging needs to be reviewed
+    # or combined with base...head
+    - !staging...master  # merges from master into staging do not need to be reviewed
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
