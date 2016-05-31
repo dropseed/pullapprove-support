@@ -184,13 +184,13 @@ A reviewer group must use either `members` or `teams`, but not both.
     branches:
         - deploy...master  # review if merging into "deploy" from "master" (i.e. `base...head`)
         # you can also leave off the base, to target pulls coming from a specific branch name
-        - ...staging  # any pulls from staging into another branch need to be reviewed
+        - '...staging'  # any pulls from staging into another branch need to be reviewed
     ```
 
-    Branch conditions can also be negated.
+    Branch conditions can also be negated (be sure to put it in quotes).
     ```yaml
     branches:
-        - !staging  # nothing merging into staging needs to be reviewed
+        - '!staging'  # nothing merging into staging needs to be reviewed
         # or combined with base...head
-        - !staging...master  # merges from master into staging do not need to be reviewed
+        - '!staging...master'  # merges from master into staging do not need to be reviewed
     ```

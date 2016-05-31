@@ -270,15 +270,15 @@ If PR is merging into one of these branches, this group must review the PR.&lt;/
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;branches:
     - deploy...master  # review if merging into &amp;quot;deploy&amp;quot; from &amp;quot;master&amp;quot; (i.e. `base...head`)
     # you can also leave off the base, to target pulls coming from a specific branch name
-    - ...staging  # any pulls from staging into another branch need to be reviewed
+    - &#39;...staging&#39;  # any pulls from staging into another branch need to be reviewed
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Branch conditions can also be negated.&lt;/p&gt;
+&lt;p&gt;Branch conditions can also be negated (be sure to put it in quotes).&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;branches:
-    - !staging  # nothing merging into staging needs to be reviewed
+    - &#39;!staging&#39;  # nothing merging into staging needs to be reviewed
     # or combined with base...head
-    - !staging...master  # merges from master into staging do not need to be reviewed
+    - &#39;!staging...master&#39;  # merges from master into staging do not need to be reviewed
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
