@@ -7,7 +7,7 @@ title: signed_off_by
 pro: yes
 ---
 
-Require that all commits in the PR are signed-off-by their **git author** (i.e. commit message contains `Signed-off-by: Dave Gaeddert <dave.gaeddert@pullapprove.com>`).
+Require that all commits in the PR are signed-off-by their **git author** (i.e. commit message contains `Signed-off-by: Dave Gaeddert <dave.gaeddert@pullapprove.com>`, with an email address that matches the author).
 
 Typically used to help manage compliance with http://developercertificate.org/.
 
