@@ -122,33 +122,21 @@
             <div class="pro-required callout"><span class="fa fa-fw fa-level-up"></span> A <a href="https://pullapprove.com/pricing/">pro plan is required</a> to use this feature on private repos.</div>
 
 
-            <h1 class="docs-title">extends</h1>
+            <h1 class="docs-title">signed_off_by</h1>
 
             
-            <div class="docs-yaml-values">Possible values: <span class="docs-yaml-value">any string matching a template name</span> </div>
+            
             <hr>
-            
+            <p>Require that all commits in the PR are signed-off-by their <strong>git author</strong> (i.e. commit message contains <code>Signed-off-by: Dave Gaeddert &lt;dave.gaeddert@pullapprove.com&gt;</code>, with an email address that matches the author).</p>
 
-<p>Extend a <a href="http://docs.pullapprove.com/yaml-templates">YAML template</a>.</p>
+<p>Typically used to help manage compliance with <a href="http://developercertificate.org/">http://developercertificate.org/</a>.</p>
 
-<p>Any settings including in the same .pullapprove.yml will override the settings in the template (if they exist).</p>
+<blockquote>
+<p>Note: This currently only checks the latest <a href="https://developer.github.com/v3/pulls/#list-commits-on-a-pull-request">250 commits on a PR</a>, if you have PR&rsquo;s larger than that, please let us know.</p>
+</blockquote>
 
-<h4 id="repo-pullapprove-yml:ddee0e7713ac40e6dbb8ff5d03dd1b30">Repo .pullapprove.yml</h4>
-
-<pre><code class="language-yaml">extends: client-projects
-reset_on_push: false  # on this repo, we don't want to reset approvals on push
-</code></pre>
-
-<h4 id="yaml-template-named-client-projects:ddee0e7713ac40e6dbb8ff5d03dd1b30">YAML template named &ldquo;client-projects&rdquo;</h4>
-
-<pre><code class="language-yaml">approve_by_comment: true
-approve_regex: '^(Approved|:\+1:)'
-reset_on_push: true
-reviewers:
-    required: 1
-    members:
-        - davegaeddert
-        - joelgaeddert
+<pre><code class="language-yaml">signed_off_by:
+    required: true
 </code></pre>
 
         </div>

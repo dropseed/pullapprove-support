@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://docs.pullapprove.com/</loc>
-    <lastmod>2016-04-04T19:59:38-06:00</lastmod>
+    <lastmod>2016-06-16T20:19:35-06:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://docs.pullapprove.com/yaml/signed_off_by/</loc>
+    <lastmod>2016-06-16T20:19:35-06:00</lastmod>
   </url>
   
   <url>
